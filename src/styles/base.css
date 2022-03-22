@@ -1,0 +1,225 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+:root {
+
+    /* ******************colors****************** */
+
+    --primary-color: #244d4d;
+    --secondary-color: #316868;
+    --secondary-light: #f90;
+    --text-primary-color: #1A202C;
+    --primary-light: #5F7589;
+    --button-primary: #1e3d59;
+    --accent-color: gold;
+    --title-color: #2F9B11;
+    --text-secondary-color: #252a2e;
+    --white: #ffffff;
+    --black: #000000;
+    --bg-color: #eee;
+    --nav-bg: #f6fbf6;
+    --light-color: #666;
+    --card-heading-color: #333;
+    --light-pink: navajowhite;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --outline: .1rem solid rgba(0, 0, 0, .1);
+    --outline-hover: .2rem solid var(--primary-color);
+   
+    --opacity-color:rgba(0, 0, 0, 0.5);
+   
+    --primary-main:#521248;
+    --card-bg-color: #FAFAFA;
+    --card-rating:#03a685;
+    --light-grey:#779;
+    --highlight-text-color:#ff3e6c;
+    
+    /* ************************ spacing************************* */
+    --spacing-1x: 1px;
+    --spacing-2x: 2px;
+    --spacing-3x: 3px;
+    --spacing-4x: 4px;
+    --spacing-5x: 5px;
+    --spacing-6x: 5px;
+    --spacing-7x: 7px;
+    --spacing-8x: 8px;
+    --spacing-10x: 10px;
+    --spacing-0-5: 0.5rem;
+    --spacing-0-2: 0.2rem;
+    --spacing-0-8: 0.8rem;
+    --spacing-1: 1rem;
+    --spacing-1-2: 1.2rem;
+    --spacing-1-3: 1.3rem;
+    --spacing-1-5: 1.5rem;
+    --spacing-2: 2rem;
+    --spacing-2-5: 2.5rem;
+    --spacing-3: 3rem;
+    --spacing-4: 4rem;
+    --spacing-5: 5rem;
+    --z-index-2: 2;
+    --z-index-3: 3;
+
+}
+
+.bottom-gutter-sm{
+    margin-bottom:1rem ;
+}
+
+.bottom-gutter-md{
+    margin-bottom:2rem ;
+}
+.bottom-gutter-lg{
+    margin-bottom:3rem ;
+}
+.bottom-gutter-xl{
+    margin-bottom:5rem ;
+}
+
+.top-gutter-sm{
+    margin-top:1rem ;
+}
+
+.top-gutter-lg{
+    margin-top:3rem ;
+}
+.top-gutter-md{
+    margin-top:2rem ;
+}
+
+.top-gutter-xl{
+    margin-top:5rem ;
+}
+
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-1 {
+    padding-bottom: var(--spacing-1-5);
+    font-size: 3.5rem;
+    position: relative;
+    color: var(--text-primary-color);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+.heading-3{
+    padding-bottom: var(--spacing-1-3);
+    font-size: 2.8rem;
+    position: relative;
+    color: var(--text-primary-color);
+}
+
+hr {
+    border: var(--spacing-1x) solid var(--light-color);
+}
+
+.center-text{
+    text-align: center;
+}
+.left-text{
+    text-align: start;
+}
+.small-text{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+.grey-text{
+    color:var(--light-color)
+}
+
+
+/* media queries  */
+
+@media (max-width:990px) {
+
+
+    html {
+        font-size: 59%;
+    }
+
+    .header {
+        padding: var(--spacing-2);
+    }
+
+    section {
+        padding: var(--spacing-2);
+    }
+
+}
+
+@media (max-width:767px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        width: 80%;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 101%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: 8px;
+        background: var(--white);
+    }
+
+    .header .navbar.active {
+        right: 0;
+        transition: .4s linear;
+    }
+
+    .header .navbar a {
+        font-size: 2rem;
+        margin: var(--spacing-2) var(--spacing-2-5);
+        display: block;
+    }
+    .home-content{
+    background: rgba(235, 232, 232, 0.7);
+    }
+}
+@media (max-width:594px){
+ .header{
+        position: fixed;
+    }   
+    .products-section .heading-3{
+        text-align: start;
+    }
+
+    .product_page .filter__wrap{
+display: none;
+    }
+}
+@media (max-width:450px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+}
