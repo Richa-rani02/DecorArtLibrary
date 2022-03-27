@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 *{
-    color:var(--text-color-primary);
     font-family: "Open Sans", sans-serif;
 }
 
@@ -17,16 +17,19 @@ body::-webkit-scrollbar {
 :root {
 
     /* ******************colors****************** */
-    --primary-color:#081229;
-    --primary-light:#191D3A;
-       --header-color:#0E101C;
-       --text-heading-color:white;
-       --button-color:#01101c;
-       --button-hover-color:#333333 ;
-    --text-color-primary:#EC59AD;
-    --text-color-secondary:#2D2D2D;
-    --accent-color:#BF1650;
+     
+    --primary-color:#0e101c;
+    --primary-light-color:#191D3A;
+    --secondary-color:#EC59AD;
+    --bg-color:#081229 ;
+    --color-light-blue:#516391;
+    --secondary-light-color:#ff7aa8;
+    --header-color:#0E101C;
     --white:#ffffff;
+    --text-color-secondary:#2D2D2D;
+    --color-black: #2d2d2d;
+    --color-grey: #333;
+    --color-light-grey: #ccc;
     
     /* ************************ spacing************************* */
     --spacing-1x: 1px;
@@ -129,5 +132,9 @@ hr {
 .grey-text{
     color:var(--light-color)
 }
-
+@media (max-width:648px) {
+header .left_area h1{
+font-size: 2rem;
+}
+}
 
