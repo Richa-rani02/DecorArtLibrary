@@ -1,2 +1,7 @@
 @import "styles/base.css";
 @import "styles/reset.css";
+
+.App{
+    color:var(--white);
+    font-family: "Open Sans", sans-serif;
+}
