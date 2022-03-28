@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
 *{
     font-family: "Open Sans", sans-serif;
 }
@@ -15,14 +16,13 @@ body::-webkit-scrollbar {
   }
 
 :root {
-
     /* ******************colors****************** */
-     
     --primary-color:#0e101c;
     --primary-light-color:#191D3A;
-    --secondary-color:#EC59AD;
+    --secondary-color:#EC59AD;   
     --bg-color:#081229 ;
     --color-light-blue:#516391;
+    --color-medium-blue: #4f6294;
     --secondary-light-color:#ff7aa8;
     --header-color:#0E101C;
     --white:#ffffff;

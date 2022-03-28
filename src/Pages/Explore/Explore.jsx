@@ -1,8 +1,9 @@
 import "./Explore.css";
+import { CategoryChip } from "../../components";
 const Explore=()=>{
     return(
         <div className="explore">
-        <h3>This is explore</h3>
+        <CategoryChip/>
     
         </div>
     )
