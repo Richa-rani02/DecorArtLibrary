@@ -47,6 +47,7 @@ header{
 }
 .btn-solid-primary{
     background-color: var(--secondary-color);
+    color:var(--text-color-secondary)
 }
 
 .search-form label{
