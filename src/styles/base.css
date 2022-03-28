@@ -2,9 +2,13 @@
 *{
     font-family: "Open Sans", sans-serif;
 }
+html, body {
+    height: 100%;
+}
 
 html {
     scroll-behavior: smooth;
+    transition: all .2s linear;
 }
 
 body{
@@ -20,7 +24,8 @@ body::-webkit-scrollbar {
      
     --primary-color:#0e101c;
     --primary-light-color:#191D3A;
-    --secondary-color:#EC59AD;
+    --secondary-color:#FBACC9;
+    --secondary-color-1:#EC59AD;
     --bg-color:#081229 ;
     --color-light-blue:#516391;
     --secondary-light-color:#ff7aa8;
