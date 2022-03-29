@@ -6,16 +6,84 @@
 export const videos = [
   {
     _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
   },
   {
-    _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    _id: "Wo5dMEP_Bba",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
   },
+  {
+    _id: "Wo5dMEP_Bbb",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbc",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbd",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbe",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbf",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbg",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
+  },
+  {
+    _id: "Wo5dMEP_Bbh",
+    title: "SIMPLE Dot Mandala Painting",
+    categoryName:"Mandala Designs",
+    creator: "Lydia May",
+    views:"1.35M",
+    duration:"16:02",
+    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
+  },
+  
 ];

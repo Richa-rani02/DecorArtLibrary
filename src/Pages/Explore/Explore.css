@@ -1,0 +1,19 @@
+.category-video{
+    height: auto;
+}
+section{
+padding: var(--spacing-1-5) 2%;
+}
+
+.category-video-container{
+    display: flex;
+    gap: var(--spacing-2);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.category-name{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6rem;
+  padding: 0 var(--spacing-1);
+ color:var(--white)
+}
