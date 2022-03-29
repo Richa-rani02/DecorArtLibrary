@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header>
       <div className="left_area">
-        <label for="check">
+        <label htmlFor="check">
           <GiHamburgerMenu className="hamburger-icon" />
         </label>
         <div>
@@ -15,7 +15,7 @@ export const Header = () => {
       </div>
       <form action="" className="search-form">
         <input type="search" id="search-bar" />
-        <label for="search-bar" class="fas fa-search"></label>
+        <label htmlFor="search-bar" className="fas fa-search"></label>
       </form>
       <div className="right_area">
         <Link to="/" className="btn btn-solid-primary btn-sm btn-rounded-5">Login</Link>

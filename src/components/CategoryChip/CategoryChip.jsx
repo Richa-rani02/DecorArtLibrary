@@ -1,14 +1,15 @@
 import "./CategoryChip.css";
+import { useStateContext } from "../../context/state-context";
 export const CategoryChip=()=>{
+
+    const {state:{category}}=useStateContext();
     return(
-    <div class="category__filters">
-    <button class="filter-options active">all</button>
-    <button class="filter-options">Macrame</button>
-    <button class="filter-options">Mandala Designs</button>
-    <button class="filter-options">DreamCatcher</button>
-    <button class="filter-options">Materials</button>
-    <button class="filter-options">Decoration</button>
-    <button class="filter-options">trending</button>
+    <div className="category__filters">
+    {category.map((cat)=>(
+        <button className="filter-options" key={cat._id}>{cat.categoryName}</button>
+     ))
+    }   
+
 </div>
     )
 }
