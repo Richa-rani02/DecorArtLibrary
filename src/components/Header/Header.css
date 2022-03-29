@@ -45,9 +45,13 @@ header{
     padding:0 var(--spacing-1-5);
     flex-wrap: wrap;
 }
+
 .btn-solid-primary{
     background-color: var(--secondary-color);
     color:var(--text-color-secondary)
+}
+.btn-solid-primary:hover{
+  background-color: var(--secondary-light-color);
 }
 
 .search-form label{
