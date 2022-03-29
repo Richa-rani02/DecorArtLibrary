@@ -4,3 +4,9 @@ export const dataActions = {
     LOAD_VIDEOS: "LOAD_VIDEOS",
     ERROR: "ERROR"
 }
+export const authActions = {
+    LOADING: "LOADING",
+    ERROR: "ERROR",
+    LOGOUT: "LOGOUT",
+    AUTH: "AUTH",
+}
