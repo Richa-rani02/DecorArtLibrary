@@ -174,7 +174,6 @@ hr {
     .explore .navigation_panel{
         z-index: 3;
         position: absolute;
-        background-color: var(--white);
         height: 100%;
         width: 80%;
         overflow: hidden;

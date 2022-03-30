@@ -16,11 +16,12 @@
 }
 .navigation_panel {
     flex-basis: 20rem;
-    padding: var(--spacing-3) var(--spacing-2) ;
+    padding: var(--spacing-2) 0 ;
     background-color: var(--primary-light-color);
   }
   .videolist_panel {
    width: 100%;
+  
   }
 
   .videolist_panel::-webkit-scrollbar { 
