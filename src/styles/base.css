@@ -174,10 +174,15 @@ hr {
         height: 100%;
         width: 80%;
         overflow: hidden;
-        left: -101%;
+        left: -30rem;
+        transition: left 1s ease-out;
+
     }
     .explore .navigation_panel.active {
         left: 0;
-        transition: .4s linear;
+        transition: left 0.5s ease-out;
+    }
+    header .hamburger-icon{
+        display: block;
     }
 }

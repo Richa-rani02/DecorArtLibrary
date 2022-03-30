@@ -1,13 +1,17 @@
 import "./Header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useStateContext } from "../../context/state-context";
+import {dataActions} from "../../Utils/actions";
 export const Header = () => {
+
+const {setDrawer}=useStateContext();
 
   return (
     <header>
       <div className="left_area">
         <label htmlFor="check">
-          <GiHamburgerMenu className="hamburger-icon" />
+          <GiHamburgerMenu className="hamburger-icon" onClick={()=>setDrawer(prev=>!prev)} />
         </label>
         <div>
           <h1>Decor Art</h1>

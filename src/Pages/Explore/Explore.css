@@ -23,10 +23,9 @@
    width: 100%;
   }
 
-.category-video{
-    height: 100%;
-
-}
+  .videolist_panel::-webkit-scrollbar { 
+    display: none; 
+}  
 section{
 padding: var(--spacing-1-5) 2%;
 }
