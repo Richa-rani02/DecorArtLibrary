@@ -15,8 +15,6 @@ export const Login=()=>{
 
 
     const handleChange = (e) => {
-        console.log(e.target.name);
-        console.log(e.target.value);
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
     }
     const loginWithTest = (e) => {
