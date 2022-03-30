@@ -10,3 +10,9 @@ export const authActions = {
     LOGOUT: "LOGOUT",
     AUTH: "AUTH",
 }
+export const watchActions = {
+    ADD_TO_WATCHLATER: "ADD_TO_WATCHLATER",
+    REMOVE_FROM_WATCHLATER: "REMOVE_FROM_WATCHLATER",
+    ERROR: "ERROR"
+
+}

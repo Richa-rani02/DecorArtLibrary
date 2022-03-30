@@ -1,47 +1,45 @@
-.explore{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
+.explore {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
+
 .navigation_videolist_panel,
 .navigation_panel,
-.videolist_panel{
-    overflow-y: auto; 
+.videolist_panel {
+  overflow-y: auto;
 }
-.navigation_videolist_panel{
-    flex: 1;
+
+.navigation_videolist_panel {
+  flex: 1;
   display: flex;
 }
+
 .navigation_panel {
-    flex-basis: 20rem;
-    padding: var(--spacing-2) 0 ;
-    background-color: var(--primary-light-color);
-  }
-  .videolist_panel {
-   width: 100%;
-  
-  }
-
-  .videolist_panel::-webkit-scrollbar { 
-    display: none; 
-}  
-section{
-padding: var(--spacing-1-5) 2%;
+  flex-basis: 20rem;
+  padding: var(--spacing-2) 0;
+  background-color: var(--primary-light-color);
 }
 
-.category-video-container{
-    display: flex;
-    gap: var(--spacing-2);
-    justify-content: center;
-    flex-wrap: wrap;
+.videolist_panel {
+  width: 100%;
 
 }
-.category-name{
-  font-family: "Ubuntu", sans-serif;
-  font-size: 1.6rem;
-  padding: 0 var(--spacing-1);
- color:var(--white)
+
+.videolist_panel::-webkit-scrollbar {
+  display: none;
 }
 
+section {
+  padding: var(--spacing-1-5) 2%;
+}
+
+.category-video-container {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: center;
+  flex-wrap: wrap;
+
+}

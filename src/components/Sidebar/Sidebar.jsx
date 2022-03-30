@@ -32,7 +32,7 @@ export const Sidebar=()=>{
                 </Link>
             </li>
             <li>
-                <Link to="">
+                <Link to="/watchlater">
                 <AiOutlineClockCircle className="icon-size"/>
                <span className="links_name">Watch Later</span>
                 </Link>
