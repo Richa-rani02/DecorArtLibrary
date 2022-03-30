@@ -5,16 +5,19 @@ import App from "./App";
 import { makeServer } from "./server";
 import {BrowserRouter as Router} from "react-router-dom";
 import {StateProvider} from "./context/state-context";
+import {AuthProvider} from "./context/auth-context";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
+    <AuthProvider>
     <StateProvider>
     <Router>
     <App />
     </Router>
     </StateProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

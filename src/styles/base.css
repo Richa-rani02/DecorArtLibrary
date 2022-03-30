@@ -16,6 +16,10 @@ body::-webkit-scrollbar {
     display: none;
   }
 
+  section{
+    padding: var(--spacing-1-5) 2%;
+    }
+
 :root {
     /* ******************colors****************** */
     --primary-color:#0e101c;

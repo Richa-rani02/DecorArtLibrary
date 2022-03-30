@@ -2,6 +2,11 @@ export const dataActions = {
     LOADING: "LOADING",
     LOAD_CATEGORY: "LOAD_CATEGORY",
     LOAD_VIDEOS: "LOAD_VIDEOS",
+    ERROR: "ERROR"
+}
+export const authActions = {
+    LOADING: "LOADING",
     ERROR: "ERROR",
-    SHOW_SIDEBAR:"SHOW_SIDEBAR"
+    LOGOUT: "LOGOUT",
+    AUTH: "AUTH",
 }
