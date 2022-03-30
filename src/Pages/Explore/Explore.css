@@ -1,3 +1,23 @@
+.expolre{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.navigation_videolist_panel,
+.naviation_panel,
+.videolist_panel{
+    overflow-y: auto; 
+}
+.navigation_videolist_panel{
+    flex: 1;
+  display: flex;
+}
+.naviation_panel {
+    flex-basis: 32rem;
+    padding: var(--spacing-3) var(--spacing-2) ;
+  }
+
 .category-video{
     height: auto;
 }

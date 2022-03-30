@@ -7,7 +7,13 @@ const Explore = () => {
 
     return (
         <div className="explore">
-            <CategoryChip />
+            <div className="navigation_videolist_panel">
+             <div className="naviation_panel">
+            
+
+             </div>
+             <div className="videolist_panel">
+             <CategoryChip />
             <section className="category-video">
                     <h4 className="category-name">Mandala Designs</h4>
                     <div className="category-video-container">
@@ -16,6 +22,10 @@ const Explore = () => {
                 ))}
                 </div>
             </section>
+
+             </div>
+            </div>
+            
         </div>
     )
 }
