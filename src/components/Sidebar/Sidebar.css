@@ -1,0 +1,25 @@
+.nav-lists{
+    margin-top: 1rem;
+    width: 100%;
+}
+.nav-lists li{
+    margin: var(--spacing-10x) 0;
+    padding: var(--spacing-1);
+    width: 100%;
+   display: flex;
+   border-radius: var(--spacing-10x);
+}
+.icon-size{
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-right: var(--spacing-1-5);
+}
+.links_name{
+    color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.nav-lists li:hover{
+    background-color: var(--color-light-blue);
+}

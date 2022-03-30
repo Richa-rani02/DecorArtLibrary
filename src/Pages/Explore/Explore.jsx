@@ -1,22 +1,28 @@
 import "./Explore.css";
-import { CategoryChip, VideoCard } from "../../components";
+import { CategoryChip, VideoCard,Sidebar } from "../../components";
 import { useStateContext } from "../../context/state-context";
 
 const Explore = () => {
-    const {state:{videos}}=useStateContext();
-
+    const {state:{videos},drawer}=useStateContext();
     return (
         <div className="explore">
-            <CategoryChip />
-            <section className="category-video">
-                    <h4 className="category-name">Mandala Designs</h4>
+            <div className="navigation_videolist_panel">
+             <div className={`navigation_panel ${drawer && 'active'}`}>
+              <Sidebar/>
+             </div>
+             <div className="videolist_panel bottom-gutter-md">
+             <CategoryChip />
+             <section className="category-video">
                     <div className="category-video-container">
                     {videos.map((clip)=>(
                     <VideoCard key={clip._id} videos={clip}/>
                 ))}
                 </div>
             </section>
-        </div>
+             </div>
+            </div>
+            </div>
+        
     )
 }
 

@@ -1,4 +1,4 @@
-import { createContext,useContext,useEffect,useReducer } from "react";
+import { createContext,useContext,useEffect,useReducer,useState } from "react";
 import { getCategory,getVideos } from "../services";
 import { dataReducer } from "../reducers/dataReducer";
 
@@ -10,18 +10,18 @@ const initialState={
     isLoading:true,
     category:[],
     videos:[],
-    error:null
+    error:null,
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);
-
+const [drawer, setDrawer] = useState(false);
 useEffect(()=>{
     getCategory(dispatch);
     getVideos(dispatch);
 },[]);
 
 return(
-        <StateContext.Provider value={{state,dispatch}}>
+        <StateContext.Provider value={{state,dispatch,drawer,setDrawer}}>
             {children}
         </StateContext.Provider>
     )
