@@ -8,25 +8,21 @@ const Explore = () => {
     return (
         <div className="explore">
             <div className="navigation_videolist_panel">
-             <div className="naviation_panel">
-            
-
+             <div className="navigation_panel">
              </div>
-             <div className="videolist_panel">
+             <div className="videolist_panel bottom-gutter-md">
              <CategoryChip />
-            <section className="category-video">
-                    <h4 className="category-name">Mandala Designs</h4>
+             <section className="category-video">
                     <div className="category-video-container">
                     {videos.map((clip)=>(
                     <VideoCard key={clip._id} videos={clip}/>
                 ))}
                 </div>
             </section>
-
              </div>
             </div>
-            
-        </div>
+            </div>
+        
     )
 }
 

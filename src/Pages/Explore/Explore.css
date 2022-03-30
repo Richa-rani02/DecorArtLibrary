@@ -1,11 +1,12 @@
-.expolre{
+.explore{
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    height: 100vh;
 }
 .navigation_videolist_panel,
-.naviation_panel,
+.navigation_panel,
 .videolist_panel{
     overflow-y: auto; 
 }
@@ -13,13 +14,18 @@
     flex: 1;
   display: flex;
 }
-.naviation_panel {
-    flex-basis: 32rem;
+.navigation_panel {
+    flex-basis: 20rem;
     padding: var(--spacing-3) var(--spacing-2) ;
+    background-color: var(--primary-light-color);
+  }
+  .videolist_panel {
+   width: 100%;
   }
 
 .category-video{
-    height: auto;
+    height: 100%;
+
 }
 section{
 padding: var(--spacing-1-5) 2%;
@@ -30,6 +36,7 @@ padding: var(--spacing-1-5) 2%;
     gap: var(--spacing-2);
     justify-content: center;
     flex-wrap: wrap;
+
 }
 .category-name{
   font-family: "Ubuntu", sans-serif;
@@ -37,3 +44,4 @@ padding: var(--spacing-1-5) 2%;
   padding: 0 var(--spacing-1);
  color:var(--white)
 }
+
