@@ -12,6 +12,7 @@ const initialState={
     videos:[],
     error:null,
     sortby:"",
+    searchVideo:"",
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);

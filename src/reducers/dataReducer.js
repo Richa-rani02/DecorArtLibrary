@@ -52,6 +52,11 @@ export const dataReducer = (state, action) => {
                 )
 
             }
+         case dataActions.SEARCH:
+             return{
+                 ...state,
+                 searchVideo:payload
+             }   
 
     }
 }
