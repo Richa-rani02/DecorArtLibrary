@@ -8,5 +8,9 @@ export const searchVideos=(videos,searchVideo)=>{
 }
 
 export const sortVideos=(videos,sortBy)=>{
-
+let updatedList=[...videos];
+if(sortBy && sortBy !=="All"){
+    return updatedList.filter((video)=>video.categoryName===sortBy)
+}
+return updatedList;
 }

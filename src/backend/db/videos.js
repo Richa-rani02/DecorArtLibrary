@@ -79,7 +79,7 @@ export const videos = [
   {
     _id: "Wo5dMEP_Bbh",
     title: "SAMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
+    categoryName:"Macrame",
     creator: "Lydia May",
     views:"1.35M",
     duration:"16:02",

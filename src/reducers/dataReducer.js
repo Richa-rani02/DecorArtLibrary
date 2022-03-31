@@ -2,7 +2,6 @@ import { dataActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
-    console.log(payload)
     switch (type) {
         case dataActions.LOADING:
             return {
@@ -52,11 +51,11 @@ export const dataReducer = (state, action) => {
                 )
 
             }
-         case dataActions.SEARCH:
-             return{
-                 ...state,
-                 searchVideo:payload
-             }   
+        case dataActions.SEARCH:
+            return {
+                ...state,
+                searchVideo: payload
+            }
 
     }
 }
