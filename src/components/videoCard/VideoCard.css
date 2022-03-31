@@ -76,6 +76,9 @@
 .option-container span{
 padding: var(--spacing-10x);
 }
+.option-container span:hover{
+    background-color: var(--primary-light-color);
+}
 .option-container.active{
 display: flex;
 }
