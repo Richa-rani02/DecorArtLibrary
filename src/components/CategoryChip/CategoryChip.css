@@ -29,5 +29,5 @@
 .filter-options.active{
     color: var(--white);
     background: var(--primary-color);
-    border: var(--spacing-1x) solid var(--secondary-light-color);
+    border: var(--spacing-1x) solid var(--secondary-color);
 }

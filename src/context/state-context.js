@@ -11,6 +11,7 @@ const initialState={
     category:[],
     videos:[],
     error:null,
+    sortby:"",
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);
