@@ -1,6 +1,6 @@
 import "./VideoCard.css";
 import { HiDotsVertical } from "react-icons/hi";
-import { MdPlayCircleFilled } from "react-icons/md";
+import { MdPlayCircleFilled, MdOutlineDelete } from "react-icons/md";
 import { RiPlayListAddFill } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { useState, useRef, useEffect } from "react";
@@ -8,7 +8,8 @@ import { isInList } from "./helper";
 import { useAuth } from "../../context/auth-context";
 import { useStateContext } from "../../context/state-context";
 import { removeFromWatchLater, addToWatchLater } from "../../services/index";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const VideoCard = ({ videos }) => {
     const {
@@ -26,14 +27,19 @@ export const VideoCard = ({ videos }) => {
     const { authState: { token } } = useAuth();
     const { state: { watchLater }, dispatch } = useStateContext();
 
-      const isInWatchLater=isInList(watchLater,id);
+    const isInWatchLater = isInList(watchLater, id);
     const navigate = useNavigate();
+    const location = useLocation();
+
 
     const watchLaterHandler = () => {
+        setModalActive(prev => !prev)
         token
-            ?isInWatchLater
-                ? removeFromWatchLater(dispatch, token, id)
-                : addToWatchLater(dispatch, token, videos)
+            ? isInWatchLater
+                ? location.pathname === '/explore'
+                    ? toast.info("Already in watch later")
+                    : removeFromWatchLater(dispatch, token, id, toast)
+                : addToWatchLater(dispatch, token, videos, toast)
             : navigate("/login")
     }
     useEffect(() => {
@@ -65,7 +71,13 @@ export const VideoCard = ({ videos }) => {
                         <HiDotsVertical size={24} className="watch_playlistoption" onClick={() => setModalActive(prev => !prev)} />
                         {isModalActive && (
                             <div className={`option-container flex-col ${isModalActive && 'active'}`}>
-                                <span onClick={() => watchLaterHandler()}><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</span>
+                                <span onClick={() => watchLaterHandler()}>
+                                    {isInWatchLater
+                                        ? location.pathname === "/explore"
+                                            ? <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>
+                                            : <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
+                                        : <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>}
+                                </span>
                                 <span><RiPlayListAddFill className="right-gutter-sm" />Add to playlist</span>
                             </div>
                         )}

@@ -1,7 +1,7 @@
 import "./Explore.css";
 import { CategoryChip, VideoCard,Sidebar } from "../../components";
 import { useStateContext } from "../../context/state-context";
-
+import {ToastContainer} from "react-toastify";
 const Explore = () => {
     const {state:{videos},drawer}=useStateContext();
     return (
@@ -21,6 +21,7 @@ const Explore = () => {
             </section>
              </div>
             </div>
+            <ToastContainer autoClose={2000}/>
             </div>
         
     )
