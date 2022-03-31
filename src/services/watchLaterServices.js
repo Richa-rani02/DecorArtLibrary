@@ -12,6 +12,7 @@ export const addToWatchLater = async (dispatch, token, video,toast) => {
             }
         });
         if (response.status === 200 || response.status === 201) {
+             //will replace it with snackbar 
             toast.success("Added to watch later !");
             dispatch({ type: watchActions.ADD_TO_WATCHLATER, payload: response.data.watchlater });
         }
@@ -23,7 +24,6 @@ export const addToWatchLater = async (dispatch, token, video,toast) => {
 }
 
 export const removeFromWatchLater = async (dispatch, token, id,toast) => {
-    const Api=`api/user/wishlist/${id}`;
     try {
         const response = await axios.delete(`/api/user/watchlater/${id}`, {
             headers: {
@@ -31,6 +31,9 @@ export const removeFromWatchLater = async (dispatch, token, id,toast) => {
             }
         });
         if (response.status === 200 || response.status === 201) {
+
+            //will replace it with snackbar 
+
             toast.success("Removed from  watch later !");
             dispatch({ type: watchActions.REMOVE_FROM_WATCHLATER, payload: response.data.watchlater });
         }
