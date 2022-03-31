@@ -15,11 +15,9 @@ export const VideoCard = ({ videos }) => {
     const {
         _id: id,
         title,
-        categoryName,
         creator,
         duration,
         views,
-        thumbnail,
     } = videos;
 
     const [isModalActive, setModalActive] = useState(false);
@@ -64,7 +62,7 @@ export const VideoCard = ({ videos }) => {
     return (
         <div className="video-card top-gutter-md">
             <div className="img-container">
-                <img src={thumbnail} alt="video" className="clip" />
+                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip" />
                {playActive && <MdPlayCircleFilled className="play-button" />} 
                 <span className="video-duration">{duration}</span>
             </div>

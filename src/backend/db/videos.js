@@ -4,87 +4,45 @@
  * */
 
 export const videos = [
+ 
   {
-    _id: "Wo5dMEP_BbI",
-    title: "SAMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBba",
+    _id: "mnpLhfEDnrc",
     title: "SIMPLE Dot Mandala Painting",
     categoryName:"Mandala Designs",
     creator: "Lydia May",
     views:"1.35M",
     duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
+    createdDate:"Jan 2, 2022"
   },
+
   {
-    _id: "Wo5dMEPBbb",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBbc",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBbd",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBbe",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/mnpLhfEDnrc/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBbf",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
-  },
-  {
-    _id: "Wo5dMEPBbg",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
-  },
-  //macrame
-  {
-    _id: "Wo5dMEP_Bbh",
-    title: "SAMPLE Dot Mandala Painting",
+    _id: "5xUM7O9mkdc",
+    title: "Macrame Flower Wall hanging",
     categoryName:"Macrame",
-    creator: "Lydia May",
-    views:"1.35M",
-    duration:"16:02",
-    thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
+    creator: "Macrame Creation",
+    views:"32k",
+    duration:"14:27",
+    createdDate:"Apr 6, 2021"
   },
+  {
+    _id: "Vmtkc7FOWLw",
+    title: "DIY Dreamcatcher | How To Make A Dream Catcher Tutorial",
+    categoryName:"DreamCatcher",
+    creator: "Emilie Lefler",
+    views:"2.5M",
+    duration:"12:35",
+    createdDate:"Feb 5, 2015"
+  },
+  {
+    _id: "CKxW8jTQx2U",
+    title: "Peacock Wall Hanging",
+    categoryName:"Decoration",
+    creator: "Craft Campus",
+    views:"1.3M",
+    duration:"6:34",
+    createdDate:"Sep 20, 2021"
+  },
+
+
   
 ];
