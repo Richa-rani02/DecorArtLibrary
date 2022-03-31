@@ -6,11 +6,12 @@ import {AiOutlineLogout} from "react-icons/ai";
 import {useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { authActions } from "../../Utils/actions";
+import { dataActions } from "../../Utils/actions";
 export const Header = () => {
   const { authState: { token }, authDispatch } = useAuth();
 let navigate=useNavigate();
 
-const {setDrawer}=useStateContext();
+const {state,dispatch,setDrawer}=useStateContext();
 
   return (
     <header>
@@ -23,7 +24,7 @@ const {setDrawer}=useStateContext();
         </div>
       </div>
       <form action="" className="search-form">
-        <input type="search" id="search-bar" />
+        <input type="search" id="search-bar" value={state.searchVideo} onChange={(e)=>dispatch({type:dataActions.SEARCH,payload:e.target.value})}/>
         <label htmlFor="search-bar" className="fas fa-search"></label>
       </form>
       <div className="right_area">

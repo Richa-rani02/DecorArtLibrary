@@ -6,7 +6,7 @@
 export const videos = [
   {
     _id: "Wo5dMEP_BbI",
-    title: "SIMPLE Dot Mandala Painting",
+    title: "SAMPLE Dot Mandala Painting",
     categoryName:"Mandala Designs",
     creator: "Lydia May",
     views:"1.35M",
@@ -78,8 +78,8 @@ export const videos = [
   },
   {
     _id: "Wo5dMEP_Bbh",
-    title: "SIMPLE Dot Mandala Painting",
-    categoryName:"Mandala Designs",
+    title: "SAMPLE Dot Mandala Painting",
+    categoryName:"Macrame",
     creator: "Lydia May",
     views:"1.35M",
     duration:"16:02",
