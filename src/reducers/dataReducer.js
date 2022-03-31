@@ -1,4 +1,5 @@
 import { dataActions } from "../Utils/actions";
+import { watchActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
@@ -35,6 +36,17 @@ export const dataReducer = (state, action) => {
                 isLoading: false,
                 error: payload
             }
+        case watchActions.ADD_TO_WATCHLATER:
+        return{
+            ...state,
+            watchLater:payload
+
+        }  
+        case watchActions.REMOVE_FROM_WATCHLATER:
+            return{
+                ...state,
+                watchLater:payload
+            }  
         case dataActions.SORT_BY:
             return {
                 ...state,

@@ -60,4 +60,26 @@
     border-radius: var(--spacing-5x);
     opacity: 0.8;
 }
+.watch_playlistoption{
+    position: relative;
+}
+.option-container{
+   width: fit-content;
+   height: fit-content;
+   position: absolute;
+   background-color:var(--primary-color);
+   z-index: 2;
+   right: 1rem;
+   padding: var(--spacing-10x);
+   display: none;
+}
+.option-container span{
+padding: var(--spacing-10x);
+}
+.option-container span:hover{
+    background-color: var(--primary-light-color);
+}
+.option-container.active{
+display: flex;
+}
 

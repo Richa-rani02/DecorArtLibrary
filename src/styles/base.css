@@ -91,6 +91,10 @@ body::-webkit-scrollbar {
     margin-top:2rem ;
 }
 
+.right-gutter-sm{
+margin-right: 10px;
+}
+
 .top-gutter-xl{
     margin-top:5rem ;
 }
