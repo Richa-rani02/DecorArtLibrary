@@ -76,6 +76,7 @@ export const videos = [
     duration:"16:02",
     thumbnail:"https://img.youtube.com/vi/kS5o9cMJW0I/hqdefault.jpg"
   },
+  //macrame
   {
     _id: "Wo5dMEP_Bbh",
     title: "SAMPLE Dot Mandala Painting",
