@@ -1,16 +1,17 @@
 import "./WatchLater.css";
-import { VideoCard } from "../../components/index";
+import { VideoCard, Sidebar } from "../../components/index";
 import { useStateContext } from "../../context/state-context";
-export const WatchLater=()=>{
-    const {state}=useStateContext();
+export const WatchLater = () => {
+    const { state } = useStateContext();
 
-    return(
+    return (
         <>
-        <section className="category-video">
-                    <div className="category-video-container">
-                    {state.watchLater.map((clip)=>(
-                    <VideoCard key={clip._id} videos={clip}/>
-                ))}
+            <Sidebar />
+            <section className="category-video">
+                <div className="category-video-container-watch">
+                    {state.watchLater.map((clip) => (
+                        <VideoCard key={clip._id} videos={clip} />
+                    ))}
                 </div>
             </section>
         </>
