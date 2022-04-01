@@ -21,7 +21,7 @@ export const VideoCard = ({ videos }) => {
     } = videos;
 
     const [isModalActive, setModalActive] = useState(false);
-    const [playActive,setPlayActive]=useState(false);
+    const [playActive, setPlayActive] = useState(false);
     const ref = useRef();
     const { authState: { token } } = useAuth();
     const { state: { watchLater }, dispatch } = useStateContext();
@@ -63,7 +63,7 @@ export const VideoCard = ({ videos }) => {
         <div className="video-card top-gutter-md">
             <div className="img-container">
                 <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip" />
-               {playActive && <MdPlayCircleFilled className="play-button" />} 
+                {playActive && <MdPlayCircleFilled className="play-button" />}
                 <span className="video-duration">{duration}</span>
             </div>
             <div className="video-desc flex-col top-gutter-sm">

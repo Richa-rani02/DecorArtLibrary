@@ -129,6 +129,11 @@ margin-right: 10px;
 a {
     text-decoration: none;
 }
+.flex-container{
+display: flex;
+align-items:center;
+justify-content: center;
+}
 
 .heading-1 {
     padding-bottom: var(--spacing-1-5);
