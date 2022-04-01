@@ -1,7 +1,7 @@
 import "./Explore.css";
 import { CategoryChip, VideoCard, Sidebar } from "../../components";
 import { useStateContext } from "../../context/state-context";
-import {ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { searchVideos, sortVideos } from "./helper";
 const Explore = () => {
     const { state: { videos, searchVideo, sortby }, drawer } = useStateContext();
@@ -11,13 +11,9 @@ const Explore = () => {
 
     return (
         <>
-         <Sidebar/>
-        
-        <div className="explore">
-            {/* <div className="navigation_videolist_panel">
-                <div className={`navigation_panel ${drawer && 'active'}`}>
-                    <Sidebar />
-                </div> */}
+            <Sidebar />
+
+            <div className="explore">
                 <div className="videolist_panel bottom-gutter-md">
                     <CategoryChip />
                     <section className="category-video">
@@ -27,10 +23,9 @@ const Explore = () => {
                             ))}
                         </div>
                     </section>
-                {/* </div> */}
+                </div>
+                <ToastContainer autoClose={2000} />
             </div>
-            <ToastContainer autoClose={2000}/>
-        </div>
         </>
 
     )

@@ -1,7 +1,14 @@
-.category-video-container {
+.category-video-container-watch {
     display: flex;
     gap: var(--spacing-2);
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 17rem;
   
+  }
+
+  @media (max-width:594px) {
+    .category-video-container-watch{
+      margin-left: 0rem;
+    }
   }
