@@ -1,6 +1,6 @@
 header{
     position: sticky;
-    background-color: var(--primary-light-color);
+    background-color: var(--blue-400);
     display: flex;
     padding:var(--spacing-2-5) var(--spacing-2);
     align-items: center;
@@ -15,7 +15,7 @@ header{
 
   .hamburger-icon{
       font-size: 1.4rem;
-      color: var(--white);
+      color: var(--black-1);
       display: none;
   }
   .left_area{
@@ -24,44 +24,35 @@ header{
     align-items: center;
   }
   .left_area h1{
-    color: var(--text-heading);
     font-size: 2.5rem;
     font-weight: 600;
     font-family: 'Alex Brush', cursive;
-    color: var(--secondary-color);
+    color: var(--brand-color);
     letter-spacing: 5px;
     line-height: 2rem;
   }
   .search-form{
     width: 45%;
     height:2.5rem;
-    background-color: var(--white);
+    background-color: var(--black-1);
     border-radius:var(--spacing-5);
     overflow: hidden;
     display: flex;
     align-items: center;
-    border: 1px solid var(--color-light-blue);
+    border: 1px solid var(--blue-100);
 }
  .search-form input{
     height:100%;
     width:100%;
     font-size: 1.1rem;
-    color:var(--color-black);
+    color:var(--black-8);
     padding:0 var(--spacing-1-5);
     flex-wrap: wrap;
-}
-
-.btn-solid-primary{
-    background-color: var(--secondary-color);
-    color:var(--text-color-secondary)
-}
-.btn-solid-primary:hover{
-  background-color: var(--secondary-light-color);
 }
 
 .search-form label{
     font-size: 1.2rem;
     padding-right: var(--spacing-1-5);
-    color:var(--secondary-color);
+    color:var(--brand-color);
     cursor: pointer;
 }

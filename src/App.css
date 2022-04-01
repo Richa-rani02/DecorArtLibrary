@@ -2,6 +2,6 @@
 @import "styles/reset.css";
 
 .App{
-    color:var(--white);
+    color:var(--black-1);
     font-family: "Open Sans", sans-serif;
 }

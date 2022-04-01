@@ -40,7 +40,7 @@ export const Login=()=>{
         <div className="login__container">
          <section className="login">
          <form action="" className="login-form top-gutter-lg flex-col">
-                    <h4>Welcome Back 👋</h4>
+                    <h4 className="bottom-gutter-sm">Welcome Back 👋</h4>
                     <input type="email" name="email" value={formValues.email} placeholder="Enter Email" className="input-box" onChange={handleChange} />
                     <input type="password" name="password" value={formValues.password} placeholder="Enter Password" className="input-box" onChange={handleChange}  />
                     <button type="submit" onClick={loginHandler} className="btn btn-solid-primary btn-sm btn-rounded-2r top-gutter-md btn-md btn-color">Login</button>

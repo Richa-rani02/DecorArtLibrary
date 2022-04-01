@@ -3,9 +3,12 @@ import {ImHome} from "react-icons/im";
 import {RiPlayListAddFill,RiHistoryLine} from "react-icons/ri";
 import {MdExplore} from "react-icons/md";
 import {AiOutlineClockCircle} from "react-icons/ai";
+import { useStateContext } from "../../context/state-context";
 import "./Sidebar.css";
 export const Sidebar=()=>{
+    const { state: { videos, searchVideo, sortby }, drawer } = useStateContext();
     return(
+        <div className={`navigation_panel ${drawer && 'active'}`}>
         <ul className="nav-lists list-style-none">
             <li>
                 <Link to="">
@@ -38,5 +41,6 @@ export const Sidebar=()=>{
                 </Link>
             </li>
         </ul>
+        </div>
     )
 }
