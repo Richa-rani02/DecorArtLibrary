@@ -14,12 +14,16 @@ overflow-y:auto;
 .video_note_panel{
     flex: 1;
     display: flex;
-    flex-direction: row-reverse;
-   
+    /* flex-direction: row-reverse;
+    */
 }
 .note_panel{
     flex-basis: 20rem;
   padding: var(--spacing-2) 0;
   background-color: var(--primary-light-color);
-  display: none;
+ 
 }
+/* .video_panel{
+    background-color: yellow;
+    height: 100vh;
+} */

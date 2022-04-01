@@ -1,0 +1,12 @@
+.video_container{
+    display: flex;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    width: 100%;
+    background-color: yellow;
+}
+.video_container iframe{
+    height: calc(75vh - 72px);
+}
