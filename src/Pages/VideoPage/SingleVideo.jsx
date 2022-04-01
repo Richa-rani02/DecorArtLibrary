@@ -2,20 +2,20 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import { AiFillLike, AiFillDislike, AiOutlineClockCircle } from "react-icons/ai";
 import { RiPlayListAddFill } from "react-icons/ri";
 
-export const SingleVideo = () => {
+export const SingleVideo = ({video}) => {
     return (
         <div className="single_video_container">
             <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/IFQszfuIRdo`}
+                src={`https://www.youtube.com/embed/${video._id}`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen=""
             ></iframe>
             <div className="video-footer top-gutter-sm">
-                <h3 className="footer-title bottom-gutter-xs">Title</h3>
+                <h3 className="footer-title bottom-gutter-xs">{video.title}</h3>
                 <div className="footer-btn top-gutter-xs">
                     <div className="btn-right">
                         <div className="flex-container">
@@ -39,7 +39,7 @@ export const SingleVideo = () => {
                 <hr />
 
                 <p className="footer-desc bottom-gutter-md">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia adipisci odit quam voluptas iste impedit quo dolorem, sunt doloribus quibusdam libero
+                    {video.description}
                 </p>
             </div>
         </div>

@@ -8,7 +8,7 @@ import { isInList } from "./helper";
 import { useAuth } from "../../context/auth-context";
 import { useStateContext } from "../../context/state-context";
 import { removeFromWatchLater, addToWatchLater } from "../../services/index";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation,Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const VideoCard = ({ videos }) => {
@@ -55,15 +55,20 @@ export const VideoCard = ({ videos }) => {
         };
     }, [isModalActive]);
 
+    const videoClickHandler=()=>{
+        navigate(`/video/${id}`)
+    }
+
     //code commented for further implementation
 
     // onMouseEnter={()=>setPlayActive(prev=>!prev)} onMouseLeave={()=>setPlayActive(prev=>!prev)}     
 
     return (
         <div className="video-card top-gutter-md">
-            <div className="img-container">
-                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip" />
-                {playActive && <MdPlayCircleFilled className="play-button" />}
+            <div className="img-container" onClick={()=>videoClickHandler()}>
+                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip"/>
+                {/* {playActive && <MdPlayCircleFilled className="play-button" />} */}
+                <MdPlayCircleFilled className="play-button" />
                 <span className="video-duration">{duration}</span>
             </div>
             <div className="video-desc flex-col top-gutter-sm">

@@ -18,3 +18,10 @@ export const watchActions = {
     ERROR: "ERROR"
 
 }
+export const historyActions = {
+    ADD_TO_HISTORY: "ADD_TO_HISTORY",
+    REMOVE_FROM_HISTORY: "REMOVE_FROM_HISTORY",
+    CLEAR_ALL_HISTORY:"CLEAR_ALL_HISTORY",
+    ERROR: "ERROR"
+
+}

@@ -14,6 +14,7 @@ const initialState={
     watchLater:[],
     sortby:"",
     searchVideo:"",
+    history:[],
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);
