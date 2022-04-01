@@ -7,7 +7,6 @@
     padding: var(--spacing-1);
     width: 100%;
    display: flex;
-   border-radius: var(--spacing-10x);
 }
 .icon-size{
     font-size: 1.4rem;
@@ -21,5 +20,7 @@
   white-space: nowrap;
 }
 .nav-lists li:hover{
-    background-color: var(--color-light-blue);
+    background-color: var(--primary-color);
+    opacity:0.6;
+    color:var(--secondary-color)
 }
