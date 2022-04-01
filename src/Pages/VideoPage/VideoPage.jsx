@@ -1,9 +1,10 @@
 import "./VideoPage.css";
-
 import { SingleVideo } from "./SingleVideo";
 export const VideoPage = () => {
     return (
+        <>
         <div className="video-page">
+            
             <SingleVideo />
             <div className="notes_container">
                 <div className="heading-container">
@@ -12,5 +13,6 @@ export const VideoPage = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
