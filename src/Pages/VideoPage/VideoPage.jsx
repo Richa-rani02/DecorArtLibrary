@@ -9,7 +9,6 @@ export const VideoPage = () => {
     const video=videos?.find((video)=>video._id===videoId);
     return video?(
         <>
-        <Sidebar/>
         <div className="video-page">
             
             <SingleVideo video={video} />
