@@ -1,4 +1,4 @@
-.category-video-container-watch {
+.category-video-container {
     display: flex;
     gap: var(--spacing-2);
     justify-content: center;
@@ -8,7 +8,7 @@
   }
 
   @media (max-width:594px) {
-    .category-video-container-watch{
+    .category-video-container{
       margin-left: 0rem;
     }
   }

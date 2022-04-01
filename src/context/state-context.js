@@ -23,7 +23,6 @@ useEffect(()=>{
     getCategory(dispatch);
     getVideos(dispatch);
 },[]);
-
 return(
         <StateContext.Provider value={{state,dispatch,drawer,setDrawer}}>
             {children}

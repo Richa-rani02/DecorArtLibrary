@@ -10,7 +10,6 @@ export const dataReducer = (state, action) => {
                 ...state,
                 isLoading: true,
                 error: null
-
             }
         case dataActions.LOAD_CATEGORY:
             return {

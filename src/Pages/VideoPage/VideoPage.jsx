@@ -2,13 +2,14 @@ import "./VideoPage.css";
 import { useParams } from "react-router-dom";
 import { SingleVideo } from "./SingleVideo";
 import { useStateContext } from "../../context/state-context";
+import { Sidebar } from "../../components";
 export const VideoPage = () => {
     const {state:{videos}}=useStateContext();
     const {videoId}=useParams();
     const video=videos?.find((video)=>video._id===videoId);
-    console.log(video);
     return video?(
         <>
+        <Sidebar/>
         <div className="video-page">
             
             <SingleVideo video={video} />

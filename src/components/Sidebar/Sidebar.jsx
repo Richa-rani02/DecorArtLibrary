@@ -11,13 +11,13 @@ export const Sidebar=()=>{
         <div className={`navigation_panel ${drawer && 'active'}`}>
         <ul className="nav-lists list-style-none">
             <li>
-                <Link to="">
+                <Link to="/">
                 <ImHome className="icon-size"/>
                <span className="links_name">Home</span>
                 </Link>
             </li>
             <li>
-                <Link to="">
+                <Link to="/explore">
                 <MdExplore className="icon-size"/>
                <span className="links_name">Explore</span>
                 </Link>
@@ -29,7 +29,7 @@ export const Sidebar=()=>{
                 </Link>
             </li>
             <li>
-                <Link to="">
+                <Link to="/history">
                 <RiHistoryLine className="icon-size"/>
                <span className="links_name">History</span>
                 </Link>

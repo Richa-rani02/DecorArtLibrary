@@ -1,7 +1,7 @@
 import axios from "axios";
 import { historyActions } from "../Utils/actions";
 import { historyUrl} from "../Utils/apiUrl";
-export const addToHisory=async (dispatch,token,video)=>{
+export const addToHistory=async (dispatch,token,video)=>{
     try{
         const {data,status}=await axios.post(historyUrl,{
             video
@@ -11,7 +11,6 @@ export const addToHisory=async (dispatch,token,video)=>{
             }
         });
         if(status===200 || status===201){
-            console.log(data.history);
             dispatch({type:historyActions.ADD_TO_HISTORY,payload:data.history})
         }
       
@@ -28,7 +27,6 @@ export const removeFromHistory=async(dispatch,token,id)=>{
             }
         });
         if(status===200 || status===201){
-            console.log(data.history);
             dispatch({type:historyActions.REMOVE_FROM_HISTORY,payload:data.history})
         }
 
