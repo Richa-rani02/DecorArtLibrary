@@ -18,6 +18,10 @@
     height: 100%;
     object-fit: cover;
 }
+.clip:hover {
+     opacity: 0.5; 
+
+}
 .video-desc{
     background-color:var(--primary-light-color);
     padding: var(--spacing-5x) ;
