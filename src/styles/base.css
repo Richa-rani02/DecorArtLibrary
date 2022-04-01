@@ -23,19 +23,29 @@ body::-webkit-scrollbar {
 :root {
     /* ******************colors****************** */
     --primary-color:#0e101c;
-    --primary-light-color:#191D3A;
-    --secondary-color:#FBACC9;
-    --secondary-color-1:#EC59AD;
-    --bg-color:#081229 ;
-    --color-light-blue:#516391;
+    /* --primary-light-color:#191D3A; */
+    /* --secondary-color:#FBACC9; */
+    /* --secondary-color-1:#EC59AD; */
+    /* --bg-color:#081229 ; */
     --color-medium-blue: #4f6294;
-    --secondary-light-color:#ff7aa8;
-    --header-color:#0E101C;
-    --white:#ffffff;
+    /* --secondary-light-color:#ff7aa8; */
+    /* --header-color:#0E101C; */
+    /* --white:#ffffff; */
     --text-color-secondary:#2D2D2D;
     --color-black: #2d2d2d;
     --color-grey: #333;
     --color-light-grey: #ccc;
+
+    --primary-color:#0e101c;
+    --secondary-color:#191D3A;
+    --accent-color:#FBACC9;
+    --bg-color:#081229;
+    --white:#ffffff;
+    --color-light-blue:#516391;
+
+
+
+
     
     /* ************************ spacing************************* */
     --spacing-1x: 1px;

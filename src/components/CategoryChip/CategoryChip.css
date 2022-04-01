@@ -16,7 +16,7 @@
     flex: 0 0 auto;
     padding: var(--spacing-10x) var(--spacing-1);
     border-radius: 5rem;
-    background: var(--primary-light-color);
+    background: var(--secondary-color);
     text-transform: capitalize;
     margin-right: var(--spacing-10x);
     color: var(--white);
@@ -29,5 +29,5 @@
 .filter-options.active{
     color: var(--white);
     background: var(--primary-color);
-    border: var(--spacing-1x) solid var(--secondary-color);
+    border: var(--spacing-1x) solid var(--accent-color);
 }

@@ -1,6 +1,6 @@
 header{
     position: sticky;
-    background-color: var(--primary-light-color);
+    background-color: var(--secondary-color);
     display: flex;
     padding:var(--spacing-2-5) var(--spacing-2);
     align-items: center;
@@ -28,7 +28,7 @@ header{
     font-size: 2.5rem;
     font-weight: 600;
     font-family: 'Alex Brush', cursive;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     letter-spacing: 5px;
     line-height: 2rem;
   }
@@ -51,17 +51,9 @@ header{
     flex-wrap: wrap;
 }
 
-.btn-solid-primary{
-    background-color: var(--secondary-color);
-    color:var(--text-color-secondary)
-}
-.btn-solid-primary:hover{
-  background-color: var(--secondary-light-color);
-}
-
 .search-form label{
     font-size: 1.2rem;
     padding-right: var(--spacing-1-5);
-    color:var(--secondary-color);
+    color:var(--accent-color);
     cursor: pointer;
 }

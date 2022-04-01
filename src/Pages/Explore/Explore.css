@@ -20,7 +20,7 @@
 .navigation_panel {
   flex-basis: 20rem;
   padding: var(--spacing-2) 0;
-  background-color: var(--primary-light-color);
+  background-color: var(--secondary-color);
 }
 
 .videolist_panel {

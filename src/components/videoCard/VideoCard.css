@@ -2,12 +2,8 @@
     width: 18rem;
     height: 18rem;
     cursor: pointer;
-    border:1px solid var(--color-light-blue);
-    background-color:var(--primary-light-color);
+    /* background-color:var(--secondary-color); */
     position: relative;
-}
-.video-card:hover{
-    border-color: var(--secondary-light-color);
 }
 .img-container{
     width: 100%;
@@ -23,7 +19,7 @@
 
 }
 .video-desc{
-    background-color:var(--primary-light-color);
+    /* background-color:var(--secondary-color); */
     padding: var(--spacing-5x) ;
     display: flex;
     gap: 4px;
@@ -81,7 +77,7 @@
 padding: var(--spacing-10x);
 }
 .option-container span:hover{
-    background-color: var(--primary-light-color);
+    background-color: var(--secondary-color);
 }
 .option-container.active{
 display: flex;
