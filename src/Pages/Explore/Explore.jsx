@@ -10,11 +10,14 @@ const Explore = () => {
     const sortByCategory = sortVideos(searchbyName, sortby);
 
     return (
+        <>
+         <Sidebar/>
+        
         <div className="explore">
-            <div className="navigation_videolist_panel">
+            {/* <div className="navigation_videolist_panel">
                 <div className={`navigation_panel ${drawer && 'active'}`}>
                     <Sidebar />
-                </div>
+                </div> */}
                 <div className="videolist_panel bottom-gutter-md">
                     <CategoryChip />
                     <section className="category-video">
@@ -24,10 +27,11 @@ const Explore = () => {
                             ))}
                         </div>
                     </section>
-                </div>
+                {/* </div> */}
             </div>
             <ToastContainer autoClose={2000}/>
         </div>
+        </>
 
     )
 }

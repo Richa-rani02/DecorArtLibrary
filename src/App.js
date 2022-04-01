@@ -2,7 +2,7 @@ import "./App.css";
 import {Routes,Route} from "react-router-dom";
 import Mockman from "mockman-js";
 import {Home,Explore,Login,WatchLater} from "./Pages/index";
-import {Header} from "./components/index";
+import {Header, Sidebar} from "./components/index";
 function App() {
   return (
     <div className="App">

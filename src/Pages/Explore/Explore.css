@@ -1,12 +1,13 @@
 .explore {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  margin-left: 17rem;
+  /* height: 100vh; */
 }
 
-.navigation_videolist_panel,
+/* .navigation_videolist_panel,
 .navigation_panel,
 .videolist_panel {
   overflow-y: auto;
@@ -21,11 +22,12 @@
   flex-basis: 20rem;
   padding: var(--spacing-2) 0;
   background-color: var(--secondary-color);
-}
+} */
+
 
 .videolist_panel {
   width: 100%;
-
+ padding-bottom: var(--spacing-3);
 }
 
 .videolist_panel::-webkit-scrollbar {
@@ -42,4 +44,9 @@ section {
   justify-content: center;
   flex-wrap: wrap;
 
+}
+@media (max-width:594px) {
+  .explore{
+    margin-left: 0rem;
+  }
 }

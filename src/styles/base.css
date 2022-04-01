@@ -185,7 +185,7 @@ hr {
 }
 
 @media (max-width:594px) {
-    .explore .navigation_panel{
+    .navigation_panel{
         z-index: 3;
         position: absolute;
         height: 100%;
@@ -195,7 +195,7 @@ hr {
         transition: left 1s ease-out;
 
     }
-    .explore .navigation_panel.active {
+    .navigation_panel.active {
         left: 0;
         transition: left 0.5s ease-out;
     }

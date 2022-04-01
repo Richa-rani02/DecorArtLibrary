@@ -1,3 +1,11 @@
+.navigation_panel {
+    width: 17rem;
+    padding: var(--spacing-2) 0;
+    background-color: var(--secondary-color);
+    position: fixed;
+    height: 100%;
+    z-index:3
+  }
 .nav-lists{
     margin-top: 1rem;
     width: 100%;
