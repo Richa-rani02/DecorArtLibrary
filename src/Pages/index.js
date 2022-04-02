@@ -5,3 +5,4 @@ export {WatchLater} from "./WatchLater/WatchLater";
 export {VideoPage} from "./VideoPage/VideoPage";
 export {SingleVideo} from "./VideoPage/SingleVideo";
 export {History}  from "./History/History";
+export {Liked} from "./Liked/Liked";

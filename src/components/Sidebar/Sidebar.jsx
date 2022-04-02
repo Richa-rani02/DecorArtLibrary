@@ -4,6 +4,7 @@ import {RiPlayListAddFill,RiHistoryLine} from "react-icons/ri";
 import {MdExplore} from "react-icons/md";
 import {AiOutlineClockCircle} from "react-icons/ai";
 import { useStateContext } from "../../context/state-context";
+import { BiLike} from "react-icons/bi";
 import "./Sidebar.css";
 export const Sidebar=()=>{
     const { state: { videos, searchVideo, sortby }, drawer } = useStateContext();
@@ -32,6 +33,12 @@ export const Sidebar=()=>{
                 <Link to="/history">
                 <RiHistoryLine className="icon-size"/>
                <span className="links_name">History</span>
+                </Link>
+            </li>
+            <li>
+                <Link to="/liked">
+                <BiLike className="icon-size"/>
+               <span className="links_name">Liked Videos</span>
                 </Link>
             </li>
             <li>

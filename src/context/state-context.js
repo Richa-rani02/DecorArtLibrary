@@ -15,6 +15,7 @@ const initialState={
     sortby:"",
     searchVideo:"",
     history:[],
+    liked:[],
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);

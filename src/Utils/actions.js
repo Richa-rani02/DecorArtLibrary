@@ -25,3 +25,9 @@ export const historyActions = {
     ERROR: "ERROR"
 
 }
+export const likedActions = {
+    ADD_TO_LIKED: "ADD_TO_LIKED",
+    REMOVE_FROM_LIKED: "REMOVE_FROM_LIKED",
+    ERROR: "ERROR"
+
+}

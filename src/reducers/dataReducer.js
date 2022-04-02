@@ -1,6 +1,7 @@
 import { dataActions } from "../Utils/actions";
 import { watchActions } from "../Utils/actions";
 import { historyActions } from "../Utils/actions";
+import { likedActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
@@ -78,10 +79,15 @@ export const dataReducer = (state, action) => {
                 ...state,
                 history: payload
             }
-        case historyActions.CLEAR_ALL_HISTORY:
+        case likedActions.ADD_TO_LIKED:
             return {
                 ...state,
-                history: []
+                liked: payload
+            }
+        case likedActions.REMOVE_FROM_LIKED:
+            return {
+                ...state,
+                liked: payload
             }
 
 

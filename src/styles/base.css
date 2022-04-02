@@ -168,6 +168,10 @@ hr {
     border: var(--spacing-1x) solid var(--light-color);
 }
 
+.highlight-text{
+    color:var(--brand-color)
+}
+
 .center-text{
     text-align: center;
 }
