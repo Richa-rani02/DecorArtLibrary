@@ -79,6 +79,11 @@ export const dataReducer = (state, action) => {
                 ...state,
                 history: payload
             }
+            case historyActions.CLEAR_ALL_HISTORY:
+            return {
+                ...state,
+                history: []
+            }
         case likedActions.ADD_TO_LIKED:
             return {
                 ...state,

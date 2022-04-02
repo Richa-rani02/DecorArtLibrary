@@ -34,3 +34,19 @@ export const removeFromHistory=async(dispatch,token,id)=>{
         console.log(error);
     }
 }
+
+export const clearAllHistory=async(dispatch,token)=>{
+    try{
+        const {data,status}=await axios.delete(`/api/user/history/all`,{
+            headers:{
+                authorization:token
+            }
+        });
+        if(status===200 || status===201){
+            dispatch({type:historyActions.CLEAR_ALL_HISTORY});
+        }
+
+    }catch(error){
+        console.log(error);
+    }
+}

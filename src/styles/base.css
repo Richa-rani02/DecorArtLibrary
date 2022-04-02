@@ -183,6 +183,10 @@ hr {
     letter-spacing: 2px;
 }
 
+.shadow-box{
+    box-shadow: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) rgba(90,118,253,0.5);
+}
+
 
 @media (max-width:768px){
 

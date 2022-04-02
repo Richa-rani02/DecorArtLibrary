@@ -10,6 +10,7 @@ import { useStateContext } from "../../context/state-context";
 import { removeFromWatchLater, addToWatchLater,addToHistory,removeFromHistory } from "../../services/index";
 import { useNavigate, useLocation,Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { removeFromLiked } from "../../services/likedServices";
 
 export const VideoCard = ({ videos }) => {
     const {
@@ -24,10 +25,11 @@ export const VideoCard = ({ videos }) => {
     const [playActive, setPlayActive] = useState(false);
     const ref = useRef();
     const { authState: { token } } = useAuth();
-    const { state: { watchLater,history }, dispatch } = useStateContext();
+    const { state: { watchLater,history,liked }, dispatch } = useStateContext();
 
     const isInWatchLater = isInList(watchLater, id);
     const isInHistory=isInList(history,id);
+    const isInLiked=isInList(liked,id);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -63,6 +65,10 @@ export const VideoCard = ({ videos }) => {
     const historyHandler=()=>{
         token && removeFromHistory(dispatch,token,id);
     }
+
+    const likedHandler=()=>{
+        token && removeFromLiked(dispatch,token,id);
+    }
     //code commented for further implementation
 
     // onMouseEnter={()=>setPlayActive(prev=>!prev)} onMouseLeave={()=>setPlayActive(prev=>!prev)}     
@@ -94,6 +100,10 @@ export const VideoCard = ({ videos }) => {
                                 <span><RiPlayListAddFill className="right-gutter-sm" />Add to playlist</span>
                                 {
                                     isInHistory && location.pathname ==="/history" &&<span onClick={()=>historyHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from history</span>
+
+                                }
+                                {
+                                    isInLiked && location.pathname ==="/liked" &&<span onClick={()=>likedHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from liked</span>
 
                                 }
                                 

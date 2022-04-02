@@ -2,8 +2,7 @@ import "./WatchLater.css";
 import { VideoCard, Sidebar } from "../../components/index";
 import { useStateContext } from "../../context/state-context";
 export const WatchLater = () => {
-    const { state } = useStateContext();
-
+    const { state} = useStateContext();
     return (
         <>
             <Sidebar />
