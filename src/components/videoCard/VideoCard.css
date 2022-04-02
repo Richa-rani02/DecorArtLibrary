@@ -81,3 +81,7 @@ padding: var(--spacing-10x);
 display: flex;
 }
 
+.popup{
+    background-color: var(--blue-400);
+}
+
