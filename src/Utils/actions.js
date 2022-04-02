@@ -33,6 +33,8 @@ export const likedActions = {
 }
 export const playlistActions = {
     ADD_TO_PLAYLIST: "ADD_TO_PLAYLIST",
+    ADD_VIDEOS_TO_PLAYLIST:"ADD_VIDEOS_TO_PLAYLIST",
+    REMOVE_VIDEOS_FROM_PLAYLIST:"REMOVE_VIDEOS_FROM_PLAYLIST",
     ERROR: "ERROR"
 
 }

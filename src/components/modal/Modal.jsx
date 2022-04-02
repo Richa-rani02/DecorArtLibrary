@@ -1,15 +1,16 @@
 import "./Modal.css";
 import { useState,useEffect } from "react";
 import { MdAdd } from "react-icons/md";
-import { addToPlaylist } from "../../services/index";
+import { addToPlaylist,addVideosToPlaylist } from "../../services/index";
 import { Navigate } from "react-router-dom";
 import {useStateContext} from "../../context/state-context";
 import {useAuth} from "../../context/auth-context";
+import {isInList} from "../videoCard/helper";
 export const Modal = ({ isPlaylistActive, setPlaylistActive }) => {
 
     const [isInputActive, setIsInputActive] = useState(false);
     const [playlistTitle,setPlaylistTitle]=useState("");
-    const {state:{playlists},dispatch}=useStateContext();
+    const {state:{playlists,videos},dispatch}=useStateContext();
     const {authState:{token}}=useAuth();
     
     const playlistHandler=()=>{
@@ -17,6 +18,8 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive }) => {
         :Navigate("/login");
         setPlaylistTitle("");
     }
+    // const isInPlaylist=()=>isInList(playlists.videos,videos._id);
+    // console.log(isInPlaylist);
     useEffect(()=>{
         isPlaylistActive?document.body.style.overflow="hidden":document.body.style.overflow='unset'; 
     },[isPlaylistActive])
@@ -38,6 +41,9 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive }) => {
                             <label key={play._id} className="filter-block">
                             <input type="checkbox" value={play.title}
                                 name="test"
+                                onChange={()=>addVideosToPlaylist(dispatch,token,play._id,video)
+
+                                }
                             />{play.title}
                         </label>
                         ))}

@@ -100,6 +100,11 @@ export const dataReducer = (state, action) => {
                 ...state,
                 playlists: payload
             }
+            case playlistActions.ADD_VIDEOS_TO_PLAYLIST:
+            return {
+                ...state,
+                playlists: playlists.map((list)=>list._id===payload._id?payload:list)
+            }
 
 
     }
