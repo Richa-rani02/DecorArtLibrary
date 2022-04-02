@@ -31,3 +31,8 @@ export const likedActions = {
     ERROR: "ERROR"
 
 }
+export const playlistActions = {
+    ADD_TO_PLAYLIST: "ADD_TO_PLAYLIST",
+    ERROR: "ERROR"
+
+}

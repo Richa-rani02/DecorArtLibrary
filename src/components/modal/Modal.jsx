@@ -1,11 +1,22 @@
 import "./Modal.css";
 import { useState,useEffect } from "react";
 import { MdAdd } from "react-icons/md";
+import { addToPlaylist } from "../../services/index";
+import { Navigate } from "react-router-dom";
+import {useStateContext} from "../../context/state-context";
+import {useAuth} from "../../context/auth-context";
 export const Modal = ({ isPlaylistActive, setPlaylistActive }) => {
 
     const [isInputActive, setIsInputActive] = useState(false);
-    console.log(isInputActive);
-
+    const [playlistTitle,setPlaylistTitle]=useState("");
+    const {state:{playlists},dispatch}=useStateContext();
+    const {authState:{token}}=useAuth();
+    
+    const playlistHandler=()=>{
+        token ? addToPlaylist(dispatch,token,playlistTitle,setIsInputActive)
+        :Navigate("/login");
+        setPlaylistTitle("");
+    }
     useEffect(()=>{
         isPlaylistActive?document.body.style.overflow="hidden":document.body.style.overflow='unset'; 
     },[isPlaylistActive])
@@ -15,31 +26,35 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive }) => {
             <div className="popup">
                 <div className="playlist__header">
                     <p className="sub-p">Save to playlist</p>
-                    <i class="fa fa-times" aria-hidden="true" onClick={() => setPlaylistActive(prev => !prev)}></i>
+                    <i className="fa fa-times" aria-hidden="true" onClick={() => setPlaylistActive(prev => !prev)}></i>
                 </div>
-                <hr />
+                {
+                    playlists.length>0 && 
+                    <>
+                    <hr />
                 <div className="playlist__modal__content top-gutter-sm">
                     <form className="category_filterbox">
-                        <label key="1" className="filter-block">
-                            <input type="checkbox" value=""
+                        {playlists.map((play)=>(
+                            <label key={play._id} className="filter-block">
+                            <input type="checkbox" value={play.title}
                                 name="test"
-                            /> Test
+                            />{play.title}
                         </label>
-                        <label key="1" className="filter-block">
-                            <input type="checkbox" value=""
-                                name="test"
-                            /> Test
-                        </label>
+                        ))}
+                        
                     </form>
                 </div>
+                </>
+                }
+                
                 <hr />
                 <div className="modal-footer-btn flex-col">
-                    {isInputActive && <input type="text" className={`playlist-input-field ${"playlist-input-active"}`} />}
+                    {isInputActive && <input type="text" value={playlistTitle} className={`playlist-input-field ${"playlist-input-active"}`} onChange={(e)=>setPlaylistTitle(e.target.value)} />}
 
                     {isInputActive ?
                         <>
                             <div className="create-btn top-gutter-xs">
-                                <span className="auto-margin btn btn-solid-primary btn-sm btn-rounded-2r btn-color">Create</span>
+                                <span className="auto-margin btn btn-solid-primary btn-sm btn-rounded-2r btn-color" onClick={()=>playlistHandler()}>Create</span>
                             </div>
                         </> :
                         <div className="create-btn top-gutter-xs">

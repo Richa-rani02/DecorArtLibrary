@@ -16,6 +16,7 @@ const initialState={
     searchVideo:"",
     history:[],
     liked:[],
+    playlists:[],
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);

@@ -2,6 +2,7 @@ import { dataActions } from "../Utils/actions";
 import { watchActions } from "../Utils/actions";
 import { historyActions } from "../Utils/actions";
 import { likedActions } from "../Utils/actions";
+import { playlistActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
@@ -79,7 +80,7 @@ export const dataReducer = (state, action) => {
                 ...state,
                 history: payload
             }
-            case historyActions.CLEAR_ALL_HISTORY:
+        case historyActions.CLEAR_ALL_HISTORY:
             return {
                 ...state,
                 history: []
@@ -93,6 +94,11 @@ export const dataReducer = (state, action) => {
             return {
                 ...state,
                 liked: payload
+            }
+        case playlistActions.ADD_TO_PLAYLIST:
+            return {
+                ...state,
+                playlists: payload
             }
 
 
