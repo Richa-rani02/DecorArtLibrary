@@ -143,6 +143,11 @@ margin-right: 10px;
 a {
     text-decoration: none;
 }
+.flex-container{
+display: flex;
+align-items:center;
+justify-content: center;
+}
 
 .heading-1 {
     padding-bottom: var(--spacing-1-5);
@@ -163,6 +168,10 @@ hr {
     border: var(--spacing-1x) solid var(--light-color);
 }
 
+.highlight-text{
+    color:var(--brand-color)
+}
+
 .center-text{
     text-align: center;
 }
@@ -172,6 +181,10 @@ hr {
 .small-text{
     font-size: 1.5rem;
     letter-spacing: 2px;
+}
+
+.shadow-box{
+    box-shadow: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) rgba(90,118,253,0.5);
 }
 
 

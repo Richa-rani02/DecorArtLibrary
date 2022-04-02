@@ -7,9 +7,10 @@ import { useState, useRef, useEffect } from "react";
 import { isInList } from "./helper";
 import { useAuth } from "../../context/auth-context";
 import { useStateContext } from "../../context/state-context";
-import { removeFromWatchLater, addToWatchLater } from "../../services/index";
-import { useNavigate, useLocation } from "react-router-dom";
+import { removeFromWatchLater, addToWatchLater,addToHistory,removeFromHistory } from "../../services/index";
+import { useNavigate, useLocation,Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { removeFromLiked } from "../../services/likedServices";
 
 export const VideoCard = ({ videos }) => {
     const {
@@ -21,13 +22,14 @@ export const VideoCard = ({ videos }) => {
     } = videos;
 
     const [isModalActive, setModalActive] = useState(false);
-    const [playActive,setPlayActive]=useState(false);
+    const [playActive, setPlayActive] = useState(false);
     const ref = useRef();
     const { authState: { token } } = useAuth();
-    const { state: { watchLater }, dispatch } = useStateContext();
+    const { state: { watchLater,history,liked }, dispatch } = useStateContext();
 
-    console.log(playActive);
     const isInWatchLater = isInList(watchLater, id);
+    const isInHistory=isInList(history,id);
+    const isInLiked=isInList(liked,id);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -36,7 +38,7 @@ export const VideoCard = ({ videos }) => {
         setModalActive(prev => !prev)
         token
             ? isInWatchLater
-                ? location.pathname === '/explore'
+                ? location.pathname !== '/watchlater'
                     ? toast.info("Already in watch later")
                     : removeFromWatchLater(dispatch, token, id, toast)
                 : addToWatchLater(dispatch, token, videos, toast)
@@ -55,15 +57,28 @@ export const VideoCard = ({ videos }) => {
         };
     }, [isModalActive]);
 
+    const videoClickHandler=()=>{
+        navigate(`/video/${id}`);
+        token && !isInHistory && addToHistory(dispatch,token,videos);
+    }
+
+    const historyHandler=()=>{
+        token && removeFromHistory(dispatch,token,id);
+    }
+
+    const likedHandler=()=>{
+        token && removeFromLiked(dispatch,token,id);
+    }
     //code commented for further implementation
 
     // onMouseEnter={()=>setPlayActive(prev=>!prev)} onMouseLeave={()=>setPlayActive(prev=>!prev)}     
 
     return (
         <div className="video-card top-gutter-md">
-            <div className="img-container">
-                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip" />
-               {playActive && <MdPlayCircleFilled className="play-button" />} 
+            <div className="img-container" onClick={()=>videoClickHandler()}>
+                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip"/>
+                {/* {playActive && <MdPlayCircleFilled className="play-button" />} */}
+                <MdPlayCircleFilled className="play-button" />
                 <span className="video-duration">{duration}</span>
             </div>
             <div className="video-desc flex-col top-gutter-sm">
@@ -77,12 +92,21 @@ export const VideoCard = ({ videos }) => {
                             <div className={`option-container flex-col ${isModalActive && 'active'}`}>
                                 <span onClick={() => watchLaterHandler()}>
                                     {isInWatchLater
-                                        ? location.pathname === "/explore"
+                                        ? location.pathname !== "/watchlater"
                                             ? <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>
                                             : <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
                                         : <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>}
                                 </span>
                                 <span><RiPlayListAddFill className="right-gutter-sm" />Add to playlist</span>
+                                {
+                                    isInHistory && location.pathname ==="/history" &&<span onClick={()=>historyHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from history</span>
+
+                                }
+                                {
+                                    isInLiked && location.pathname ==="/liked" &&<span onClick={()=>likedHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from liked</span>
+
+                                }
+                                
                             </div>
                         )}
 

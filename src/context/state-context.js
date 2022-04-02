@@ -14,6 +14,8 @@ const initialState={
     watchLater:[],
     sortby:"",
     searchVideo:"",
+    history:[],
+    liked:[],
 }
 
 const [state,dispatch]=useReducer(dataReducer,initialState);
@@ -22,7 +24,6 @@ useEffect(()=>{
     getCategory(dispatch);
     getVideos(dispatch);
 },[]);
-
 return(
         <StateContext.Provider value={{state,dispatch,drawer,setDrawer}}>
             {children}

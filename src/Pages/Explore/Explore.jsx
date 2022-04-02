@@ -16,8 +16,8 @@ const Explore = () => {
             <div className="explore">
                 <div className="videolist_panel bottom-gutter-md">
                     <CategoryChip />
-                    <section className="category-video">
-                        <div className="category-video-container">
+                    <section className="category-video-explore">
+                        <div className="category-video-container-explore">
                             {sortByCategory.map((clip) => (
                                 <VideoCard key={clip._id} videos={clip} />
                             ))}

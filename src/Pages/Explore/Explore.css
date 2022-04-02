@@ -19,7 +19,7 @@ section {
   padding: var(--spacing-1-5) 2%;
 }
 
-.category-video-container {
+.category-video-container-explore {
   display: flex;
   gap: var(--spacing-1-5);
   justify-content: center;

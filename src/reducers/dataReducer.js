@@ -1,5 +1,7 @@
 import { dataActions } from "../Utils/actions";
 import { watchActions } from "../Utils/actions";
+import { historyActions } from "../Utils/actions";
+import { likedActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
@@ -9,7 +11,6 @@ export const dataReducer = (state, action) => {
                 ...state,
                 isLoading: true,
                 error: null
-
             }
         case dataActions.LOAD_CATEGORY:
             return {
@@ -37,16 +38,16 @@ export const dataReducer = (state, action) => {
                 error: payload
             }
         case watchActions.ADD_TO_WATCHLATER:
-        return{
-            ...state,
-            watchLater:payload
-
-        }  
-        case watchActions.REMOVE_FROM_WATCHLATER:
-            return{
+            return {
                 ...state,
-                watchLater:payload
-            }  
+                watchLater: payload
+
+            }
+        case watchActions.REMOVE_FROM_WATCHLATER:
+            return {
+                ...state,
+                watchLater: payload
+            }
         case dataActions.SORT_BY:
             return {
                 ...state,
@@ -68,6 +69,32 @@ export const dataReducer = (state, action) => {
                 ...state,
                 searchVideo: payload
             }
+        case historyActions.ADD_TO_HISTORY:
+            return {
+                ...state,
+                history: payload
+            }
+        case historyActions.REMOVE_FROM_HISTORY:
+            return {
+                ...state,
+                history: payload
+            }
+            case historyActions.CLEAR_ALL_HISTORY:
+            return {
+                ...state,
+                history: []
+            }
+        case likedActions.ADD_TO_LIKED:
+            return {
+                ...state,
+                liked: payload
+            }
+        case likedActions.REMOVE_FROM_LIKED:
+            return {
+                ...state,
+                liked: payload
+            }
+
 
     }
 }
