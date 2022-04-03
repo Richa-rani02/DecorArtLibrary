@@ -1,0 +1,29 @@
+.playlistcard{
+    width: 18rem;
+    max-height: 18rem;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--blue-350);
+    border-radius: 5px;
+    box-shadow:var(--spacing-3x) var(--spacing-3x) var(--spacing-3x)rgb(46, 53, 107,0.5);
+}
+.trans-drawer{
+    height: 10rem;
+    width: 43%;
+    position: absolute;
+    background-color: var(--black-6);
+    top: 0;
+    right:0;
+    opacity: 0.9;
+}
+.trans-drawer span{
+    font-size: 1.5rem;
+}
+
+.playlist-desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-10x) var(--spacing-1)
+}
+

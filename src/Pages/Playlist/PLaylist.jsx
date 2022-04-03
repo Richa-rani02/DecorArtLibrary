@@ -1,6 +1,8 @@
 import "../WatchLater/WatchLater.css";
 import { VideoCard, Sidebar } from "../../components/index";
 import { useStateContext } from "../../context/state-context";
+import {PlaylistCard} from "./components/PlaylistCard";
+import "./Playlist.css";
 export const Playlists = () => {
     const { state:{playlists}} = useStateContext();
     console.log(playlists);
@@ -10,12 +12,7 @@ export const Playlists = () => {
             <section className="category-video">
                 <div className="category-video-container">
                   {playlists.map(play=>(
-                      <>
-                      <h2>{play.title}</h2>
-                          {play.videos.map(clip=>(
-                            <VideoCard key={clip._id} videos={clip} />
-                          ))}
-                      </>
+                      <PlaylistCard playlistfolder={play}/>
                   ))}
 
                 </div>
