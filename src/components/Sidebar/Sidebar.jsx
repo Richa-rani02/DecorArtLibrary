@@ -24,7 +24,7 @@ export const Sidebar=()=>{
                 </Link>
             </li>
             <li>
-                <Link to="">
+                <Link to="/playlist">
                 <RiPlayListAddFill className="icon-size"/>
                <span className="links_name">Playlist</span>
                 </Link>

@@ -25,6 +25,7 @@ export const VideoCard = ({ videos }) => {
     const [isModalActive, setModalActive] = useState(false);
     const [playActive, setPlayActive] = useState(false);
     const [isPlaylistActive,setPlaylistActive]=useState(false);
+    const [modalData,setModalData]=useState({});
     const ref = useRef();
     const { authState: { token } } = useAuth();
     const { state: { watchLater, history, liked }, dispatch } = useStateContext();
@@ -71,6 +72,11 @@ export const VideoCard = ({ videos }) => {
     const likedHandler = () => {
         token && removeFromLiked(dispatch, token, id);
     }
+
+    const addToPlaylist=()=>{
+        setModalActive(prev => !prev);
+         setModalData(videos);
+    }
     //code commented for further implementation
 
     // onMouseEnter={()=>setPlayActive(prev=>!prev)} onMouseLeave={()=>setPlayActive(prev=>!prev)}     
@@ -90,7 +96,7 @@ export const VideoCard = ({ videos }) => {
                 <div className="video-detail">
                     <span>{views} Views | 3months ago</span>
                     <span ref={ref}>
-                        <HiDotsVertical size={24} className="watch_playlistoption" onClick={() => setModalActive(prev => !prev)} />
+                        <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>addToPlaylist()} />
                         {isModalActive && (
                             <div className={`option-container flex-col ${isModalActive && 'active'}`}>
                                 <span onClick={() => watchLaterHandler()}>
@@ -117,7 +123,7 @@ export const VideoCard = ({ videos }) => {
                 </div>
             </div>
         </div>
-        <Modal isPlaylistActive={isPlaylistActive} setPlaylistActive={setPlaylistActive}/>
+        <Modal isPlaylistActive={isPlaylistActive} setPlaylistActive={setPlaylistActive} modalData={modalData}/>
         </>
     )
 }

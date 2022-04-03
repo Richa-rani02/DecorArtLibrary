@@ -17,7 +17,6 @@ export const addToPlaylist = async (dispatch, token, name, setInputActive) => {
             });
         setInputActive(false);
         if (status === 200 || status === 201) {
-            console.log(data.playlists);
             dispatch({ type: playlistActions.ADD_TO_PLAYLIST, payload: data.playlists })
         }
     } catch (error) {
@@ -34,11 +33,27 @@ export const addVideosToPlaylist = async (dispatch, token, id, video) => {
             }
         });
         if (status === 200 || status === 201) {
-            console.log(data.playlists);
-            dispatch({ type: playlistActions.ADD_VIDEOS_TO_PLAYLIST, payload: data.playlists })
+            //  console.log(data.playlists);
+            dispatch({ type: playlistActions.VIDEOS_TO_PLAYLIST, payload: data.playlist })
         }
 
-    } catch (error){
-console.log(error);
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const removeVideosFromPlaylist = async (dispatch, token, id, videoId) => {
+    try {
+        const { data, status } = await axios.delete(`/api/user/playlists/${id}/${videoId}`,{
+            headers: {
+                authorization: token
+            }
+        });
+        if (status === 200 || status === 201) {
+              console.log(data.playlists);
+            dispatch({ type: playlistActions.VIDEOS_TO_PLAYLIST, payload: data.playlist })
+        }
+
+    } catch (error) {
+        console.log(error);
     }
 }

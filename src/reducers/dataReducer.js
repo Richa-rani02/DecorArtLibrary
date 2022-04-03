@@ -6,6 +6,7 @@ import { playlistActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
+    // console.log(type,payload);
     switch (type) {
         case dataActions.LOADING:
             return {
@@ -100,10 +101,10 @@ export const dataReducer = (state, action) => {
                 ...state,
                 playlists: payload
             }
-            case playlistActions.ADD_VIDEOS_TO_PLAYLIST:
+            case playlistActions.VIDEOS_TO_PLAYLIST:
             return {
                 ...state,
-                playlists: playlists.map((list)=>list._id===payload._id?payload:list)
+                playlists: state.playlists.map((list)=>list._id===payload._id?payload:list)
             }
 
 
