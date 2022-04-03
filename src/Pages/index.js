@@ -7,3 +7,4 @@ export {SingleVideo} from "./VideoPage/SingleVideo";
 export {History}  from "./History/History";
 export {Liked} from "./Liked/Liked";
 export {Playlists} from "./Playlist/PLaylist";
+export {Playlistvideo} from "./Playlist/components/Playlistvideo";

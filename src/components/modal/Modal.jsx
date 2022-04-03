@@ -2,7 +2,7 @@ import "./Modal.css";
 import { useState, useEffect } from "react";
 import { MdAdd } from "react-icons/md";
 import { addToPlaylist, addVideosToPlaylist,removeVideosFromPlaylist } from "../../services/index";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import { useStateContext } from "../../context/state-context";
 import { useAuth } from "../../context/auth-context";
 import { isInList } from "../videoCard/helper";
@@ -19,8 +19,6 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
             : navigate("/login");
         setPlaylistTitle("");
     }
-    // const isInPlaylist=()=>isInList(playlists.videos,videos._id);
-    // console.log(isInPlaylist);
     useEffect(() => {
         isPlaylistActive ? document.body.style.overflow = "hidden" : document.body.style.overflow = 'unset';
     }, [isPlaylistActive])
@@ -40,7 +38,6 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
                             <form className="category_filterbox">
                                 {playlists.map((play) => {
                                     const isInPlaylist =isInList(play.videos,modalData._id);
-                                    // console.log(isInPlaylist);
                                     return (
                                         <label key={play._id} className="filter-block">
                                             <input type="checkbox" value={play.title}

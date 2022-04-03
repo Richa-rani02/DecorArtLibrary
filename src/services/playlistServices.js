@@ -7,7 +7,7 @@ export const addToPlaylist = async (dispatch, token, name, setInputActive) => {
         const { data, status } = await axios.post(playlistUrl, {
             playlist: {
                 title: name,
-                description: ""
+                description: "",
             },
         },
             {
@@ -17,12 +17,30 @@ export const addToPlaylist = async (dispatch, token, name, setInputActive) => {
             });
         setInputActive(false);
         if (status === 200 || status === 201) {
-            dispatch({ type: playlistActions.ADD_TO_PLAYLIST, payload: data.playlists })
+            dispatch({ type: playlistActions.PLAYLIST, payload: data.playlists })
         }
     } catch (error) {
         console.log(error);
     }
 }
+export const removePlaylist = async (dispatch, token,id,navigate) => {
+    console.log("called");
+    try {
+        const { data, status } = await axios.delete(`/api/user/playlists/${id}`,{
+            headers: {
+                authorization: token
+            }
+        });
+        if (status === 200 || status === 201) {
+            dispatch({ type: playlistActions.PLAYLIST, payload: data.playlists })
+            navigate("/explore");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 export const addVideosToPlaylist = async (dispatch, token, id, video) => {
     try {
         const { data, status } = await axios.post(`/api/user/playlists/${id}`, {
@@ -33,7 +51,6 @@ export const addVideosToPlaylist = async (dispatch, token, id, video) => {
             }
         });
         if (status === 200 || status === 201) {
-            //  console.log(data.playlists);
             dispatch({ type: playlistActions.VIDEOS_TO_PLAYLIST, payload: data.playlist })
         }
 
@@ -49,7 +66,6 @@ export const removeVideosFromPlaylist = async (dispatch, token, id, videoId) => 
             }
         });
         if (status === 200 || status === 201) {
-              console.log(data.playlists);
             dispatch({ type: playlistActions.VIDEOS_TO_PLAYLIST, payload: data.playlist })
         }
 

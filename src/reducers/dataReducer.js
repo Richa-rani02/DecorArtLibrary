@@ -96,7 +96,7 @@ export const dataReducer = (state, action) => {
                 ...state,
                 liked: payload
             }
-        case playlistActions.ADD_TO_PLAYLIST:
+        case playlistActions.PLAYLIST:
             return {
                 ...state,
                 playlists: payload

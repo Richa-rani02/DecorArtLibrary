@@ -32,7 +32,7 @@ export const likedActions = {
 
 }
 export const playlistActions = {
-    ADD_TO_PLAYLIST: "ADD_TO_PLAYLIST",
+    PLAYLIST: "PLAYLIST",
     VIDEOS_TO_PLAYLIST:"VIDEOS_TO_PLAYLIST",
     ERROR: "ERROR"
 
