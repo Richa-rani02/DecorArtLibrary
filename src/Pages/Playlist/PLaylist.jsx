@@ -5,14 +5,13 @@ import {PlaylistCard} from "./components/PlaylistCard";
 import "./Playlist.css";
 export const Playlists = () => {
     const { state:{playlists}} = useStateContext();
-    console.log(playlists);
     return (
         <>
             <Sidebar />
             <section className="category-video">
                 <div className="category-video-container">
                   {playlists.map(play=>(
-                      <PlaylistCard playlistfolder={play}/>
+                      <PlaylistCard key={play._id} playlistfolder={play}/>
                   ))}
 
                 </div>

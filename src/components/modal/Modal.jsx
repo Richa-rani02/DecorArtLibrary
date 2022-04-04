@@ -6,6 +6,7 @@ import {useNavigate } from "react-router-dom";
 import { useStateContext } from "../../context/state-context";
 import { useAuth } from "../../context/auth-context";
 import { isInList } from "../videoCard/helper";
+import {toast} from 'react-toastify';
 export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
 
     const [isInputActive, setIsInputActive] = useState(false);
@@ -13,11 +14,13 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
     const { state: { playlists, videos }, dispatch } = useStateContext();
     const { authState: { token } } = useAuth();
     const navigate=useNavigate();
+    const isPlaylistExists=playlists.some((ele)=>ele.title===playlistTitle);
 
     const playlistHandler = () => {
-        token ? addToPlaylist(dispatch, token, playlistTitle, setIsInputActive)
-            : navigate("/login");
-        setPlaylistTitle("");
+        !isPlaylistExists
+        ? playlistTitle && addToPlaylist(dispatch, token, playlistTitle, setIsInputActive)
+        : toast.info("playlist already exists");
+       setPlaylistTitle("");  
     }
     useEffect(() => {
         isPlaylistActive ? document.body.style.overflow = "hidden" : document.body.style.overflow = 'unset';

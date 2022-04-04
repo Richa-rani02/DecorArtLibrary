@@ -12,16 +12,16 @@ export const Playlistvideo = () => {
             <Sidebar />
             <div className="category-video playlistvideo-container">
                 <div className="videoimg_list_wrap">
-                    <div class="video_img_wrap">
+                    <div className="video_img_wrap">
                         <div className="playlistimg-container bottom-gutter-sm">
                             {videos.slice(0, 1).map(video => (
-                                <img src={`https://img.youtube.com/vi/${video._id}/0.jpg`} alt="video" className="clip" />
+                                <img src={`https://img.youtube.com/vi/${video._id}/0.jpg`} alt="video" className="img-responsive" />
                             ))}
                         </div>
                         <span>{title}</span>
 
                     </div>
-                    <div class="videolist_wrap">
+                    <div className="videolist_wrap">
                         {
                             videos.map(clip => (
                                 < HorizontalCard key={clip._id} videos={clip} listId={playlistId} />

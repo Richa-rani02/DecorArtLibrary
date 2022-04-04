@@ -24,7 +24,6 @@ export const addToPlaylist = async (dispatch, token, name, setInputActive) => {
     }
 }
 export const removePlaylist = async (dispatch, token,id,navigate) => {
-    console.log("called");
     try {
         const { data, status } = await axios.delete(`/api/user/playlists/${id}`,{
             headers: {
@@ -33,7 +32,10 @@ export const removePlaylist = async (dispatch, token,id,navigate) => {
         });
         if (status === 200 || status === 201) {
             dispatch({ type: playlistActions.PLAYLIST, payload: data.playlists })
-            navigate("/explore");
+            if(data.playlists.length===0){
+                navigate("/explore");
+            }
+            
         }
     } catch (error) {
         console.log(error);

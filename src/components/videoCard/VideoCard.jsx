@@ -85,7 +85,7 @@ export const VideoCard = ({ videos }) => {
         <>
                 <div className="video-card top-gutter-md">
             <div className="img-container" onClick={() => videoClickHandler()}>
-                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip" />
+                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip img-responsive" />
                 {/* {playActive && <MdPlayCircleFilled className="play-button" />} */}
                 <MdPlayCircleFilled className="play-button" />
                 <span className="video-duration">{duration}</span>

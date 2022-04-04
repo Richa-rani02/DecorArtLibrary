@@ -12,19 +12,21 @@ export const PlaylistCard = ({ playlistfolder }) => {
     return (
         <div className="playlistcard">
             <>
-                <div className="img-container rad-5x" onClick={() => navigate(`/playlist/${_id}`)} >
+                <div className="img-container rad-5x">
 
                     {videos.length > 0 ? videos.slice(0, 1).map(video => (
-                        <img src={`https://img.youtube.com/vi/${video._id}/0.jpg`} alt=" no video" className="clip" />
+                        <img src={`https://img.youtube.com/vi/${video._id}/0.jpg`} alt=" no video" className="img-responsive" />
                     )) :
-                        <img src="../Assets/novideopng.png"
-                            alt="no video" className="clip" />
+                        <img src="../Assets/novideo.png"
+                            alt="no video" className="img-responsive" />
                     }
 
                 </div>
-                <div className="trans-drawer flex-container">
-                    <span className="small-text">{videos.length >= 1 && `${videos.length}+ `}<span className="video-text">video</span></span>
+                {videos.length>0 && 
+                <div className="trans-drawer flex-container"onClick={() => navigate(`/playlist/${_id}`)}  >
+                   <span className="small-text">{videos.length >= 1 && `${videos.length}+ `}<span className="video-text">video</span></span>
                 </div>
+}
             </>
             <div className="playlist-desc">
                 <span>{title}</span>
