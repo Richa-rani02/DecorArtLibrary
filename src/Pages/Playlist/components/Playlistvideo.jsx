@@ -6,7 +6,6 @@ export const Playlistvideo = () => {
     const { playlistId } = useParams();
     const { state: { playlists } } = useStateContext();
     const playlistList = playlists?.find((play) => play._id === playlistId);
-    console.log(playlistList);
     return playlistList && playlistList.videos.length>0? (
         <>
             <Sidebar />

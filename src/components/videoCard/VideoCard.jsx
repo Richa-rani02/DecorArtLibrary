@@ -74,8 +74,13 @@ export const VideoCard = ({ videos }) => {
     }
 
     const addToPlaylist=()=>{
-        setModalActive(prev => !prev);
-         setModalData(videos);
+        if(token){
+            setPlaylistActive(prev => !prev)
+            setModalData(videos)
+        }else{
+            navigate("/login")
+        }
+        
     }
     //code commented for further implementation
 
