@@ -1,0 +1,106 @@
+.popup{
+    font-size: 1.1rem;  
+    min-width: 250px;
+    min-height: auto; 
+    background-color: var(--blue-400);
+    position: relative;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+}
+.playlist__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.playlist__modal__content{
+  padding: 0 var(--spacing-1) ;
+}
+.filter-block{
+  display:flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding:8px 0 ;
+ }
+ 
+.category_filterbox input[type="checkbox"]{
+    appearance:none;
+     content: "\2714";
+     width: 0.9rem;
+     height: 0.9rem;
+     background:whitesmoke;
+     border-radius:1px;
+     cursor:pointer;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     
+   }
+   .category_filterbox input[type="checkbox"]:after{
+     content:"\f00c";
+     font-family:"Font Awesome 5 Free";
+     font-weight:900;
+     font-size:0.6rem;
+     color:var(--blue-500);
+     display:none;
+      transition: all 0.2s ease;
+   }
+   .category_filterbox input[type="checkbox"]:hover{
+    background:var(--black-1);
+     
+   }
+   .category_filterbox input[type="checkbox"]:checked{
+     background:var(--black-1);
+     
+   }
+   .category_filterbox input[type="checkbox"]:checked:after{
+     display:block;
+     transform: scale(1);
+   }
+  
+   .category_filterbox input[type="checkbox"]{
+    -webkit-transform: scale(1.2);
+  }
+  .category_filterbox label{
+    font-size: 0.95rem;
+  }
+
+  .modal-footer-btn{
+    display: flex;
+  }
+  .create-btn{
+  display:flex;
+  align-items: center;
+    font-size: 1rem;
+  }
+.create-btn span{
+ cursor: pointer;
+}
+
+
+  .playlist-input-field{
+    width: 100%;
+    padding: 10px 0;
+  margin: 6px 0 1rem ;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid var(--black-4);
+  outline: none;
+  background: transparent;
+  color: var(--black-3);
+  display: none;
+  transition: all 0.5s ease-in;
+  }
+
+  .playlist-input-active{
+    display: block;
+    transition: all 0.5s ease-out;
+  }
+
+  .modal-active{
+    background-color:var(--modal-color); 
+}
+
+  

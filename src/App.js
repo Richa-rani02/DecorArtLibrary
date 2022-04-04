@@ -1,7 +1,7 @@
 import "./App.css";
 import {Routes,Route} from "react-router-dom";
 import Mockman from "mockman-js";
-import {Home,Explore,Login,WatchLater,VideoPage,History,Liked} from "./Pages/index";
+import {Home,Explore,Login,WatchLater,VideoPage,History,Liked,Playlists,Playlistvideo} from "./Pages/index";
 import {Header} from "./components/index";
 function App() {
   return (
@@ -16,6 +16,8 @@ function App() {
         <Route path="/video/:videoId" element={<VideoPage/>}/>
         <Route path="/history" element={<History/>}/>
         <Route path="/liked" element={<Liked/>}/>
+        <Route path="/playlist" element={<Playlists/>}/>
+        <Route path="/playlist/:playlistId" element={<Playlistvideo/>}/>
 
       </Routes>
     </div>

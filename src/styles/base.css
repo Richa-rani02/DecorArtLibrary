@@ -42,12 +42,12 @@ body::-webkit-scrollbar {
     --black-6:hsl(0, 0%, 30%);
     --black-7:hsl(0, 0%, 18%);
     --black-8:hsl(0, 0%, 8%);
+    --modal-color:hsl(0, 0%, 30%,0.4);
 
     --brand-color:hsl(338, 91%, 83%);
     --bg-color:hsl(222, 67%, 10%);
 
-
-
+    /* --brand-color:#fbacc9; */
 
 
     
@@ -185,6 +185,14 @@ hr {
 
 .shadow-box{
     box-shadow: var(--spacing-2x) var(--spacing-2x) var(--spacing-2x) rgba(90,118,253,0.5);
+}
+.auto-margin{
+    margin-left: auto;
+}
+.img-responsive{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 

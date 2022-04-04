@@ -1,0 +1,13 @@
+.video-horizontal-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+}
+.horizontal-img{
+    width: 5rem;
+    height: 5rem;
+}
+.title-width{
+    max-width: 70%;
+}
