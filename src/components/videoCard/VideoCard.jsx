@@ -101,7 +101,7 @@ export const VideoCard = ({ videos }) => {
                 <div className="video-detail">
                     <span>{views} Views | 3months ago</span>
                     <span ref={ref}>
-                        <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>addToPlaylist()} />
+                        <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>setModalActive(prev => !prev)} />
                         {isModalActive && (
                             <div className={`option-container flex-col ${isModalActive && 'active'}`}>
                                 <span onClick={() => watchLaterHandler()}>
@@ -111,7 +111,7 @@ export const VideoCard = ({ videos }) => {
                                             : <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
                                         : <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>}
                                 </span>
-                                <span onClick={()=>setPlaylistActive(prev=>!prev)}><RiPlayListAddFill className="right-gutter-sm"/>Add to playlist</span>
+                                <span onClick={()=>addToPlaylist()}><RiPlayListAddFill className="right-gutter-sm"/>Add to playlist</span>
                                 {
                                     isInHistory && location.pathname === "/history" && <span onClick={() => historyHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from history</span>
 
