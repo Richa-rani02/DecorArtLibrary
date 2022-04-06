@@ -7,7 +7,7 @@ import { useStateContext } from "../../context/state-context";
 import { BiLike} from "react-icons/bi";
 import "./Sidebar.css";
 export const Sidebar=()=>{
-    const { state: { videos, searchVideo, sortby }, drawer } = useStateContext();
+    const {drawer} = useStateContext();
     return(
         <div className={`navigation_panel ${drawer && 'active'}`}>
         <ul className="nav-lists list-style-none">

@@ -2,7 +2,7 @@ import "./VideoPage.css";
 import { useParams } from "react-router-dom";
 import { SingleVideo } from "./SingleVideo";
 import { useStateContext } from "../../context/state-context";
-import { Sidebar } from "../../components";
+
 export const VideoPage = () => {
     const {state:{videos}}=useStateContext();
     const {videoId}=useParams();
@@ -10,7 +10,6 @@ export const VideoPage = () => {
     return video?(
         <>
         <div className="video-page">
-            
             <SingleVideo video={video} />
             <div className="notes_container">
                 <div className="heading-container">
