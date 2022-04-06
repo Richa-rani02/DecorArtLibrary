@@ -1,26 +1,32 @@
 import axios from "axios";
 import {authActions} from "../Utils/actions";
 import {loginUrl} from "../Utils/apiUrl";
+import toast from "react-hot-toast";
 
-
-export const userLogin=async(userDetails,authDispatch,toast,navigate)=>{
+export const userLogin=async(userDetails,authDispatch,navigate)=>{
+    const toastId = toast.loading("Logging in...");
 
     try{
-       const response=await axios.post(loginUrl,{
+       const {data:{foundUser,encodedToken},status}=await axios.post(loginUrl,{
            email:userDetails.email,
            password:userDetails.password
        });
 
-      if(response.status===200){
-          localStorage.setItem("decorartToken",response.data.encodedToken);
-          toast.success("You are now logged in !");
-          authDispatch({type:authActions.AUTH,payload1:response.data.encodedToken,payload2:response.data.foundUser})
-         navigate("/explore");
+      if(status===200){
+          localStorage.setItem("decorartToken",encodedToken);
+          toast.success(`Hello, ${foundUser.firstName}. Welcome back!`, {
+            id: toastId,
+            icon: "👋",
+          });
+          authDispatch({type:authActions.AUTH,payload: { user:foundUser, token:encodedToken }})
+            navigate(-1);
       }
     } catch(error){
         console.log(error);
-        toast.error("Error in login");
-        authDispatch({type:authActions.ERROR,payload:"Error in login"});
+        toast.error("Some error occured in login. Try Again:( ", {
+            id: toastId,
+          });
+        authDispatch({type:authActions.ERROR,payload:error.response});
         
     }
 }
