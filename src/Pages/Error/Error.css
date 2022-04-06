@@ -1,0 +1,9 @@
+.error-page{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-img{
+    width: 25rem;
+    height: 25rem;
+}
