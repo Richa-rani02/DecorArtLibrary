@@ -8,3 +8,5 @@ export {History}  from "./History/History";
 export {Liked} from "./Liked/Liked";
 export {Playlists} from "./Playlist/PLaylist";
 export {Playlistvideo} from "./Playlist/components/Playlistvideo";
+export {Error404} from "./Error/Error404";
+export {Empty} from "./Error/Empty";

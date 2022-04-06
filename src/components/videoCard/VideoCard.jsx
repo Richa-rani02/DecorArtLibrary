@@ -9,9 +9,9 @@ import { useAuth } from "../../context/auth-context";
 import { useStateContext } from "../../context/state-context";
 import { removeFromWatchLater, addToWatchLater, addToHistory, removeFromHistory } from "../../services/index";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import { removeFromLiked } from "../../services/likedServices";
 import { Modal } from "../modal/Modal";
+import toast from "react-hot-toast";
 
 export const VideoCard = ({ videos }) => {
     const {
@@ -23,9 +23,8 @@ export const VideoCard = ({ videos }) => {
     } = videos;
 
     const [isModalActive, setModalActive] = useState(false);
-    const [playActive, setPlayActive] = useState(false);
-    const [isPlaylistActive,setPlaylistActive]=useState(false);
-    const [modalData,setModalData]=useState({});
+    const [isPlaylistActive, setPlaylistActive] = useState(false);
+    const [modalData, setModalData] = useState({});
     const ref = useRef();
     const { authState: { token } } = useAuth();
     const { state: { watchLater, history, liked }, dispatch } = useStateContext();
@@ -40,12 +39,10 @@ export const VideoCard = ({ videos }) => {
     const watchLaterHandler = () => {
         setModalActive(prev => !prev)
         token
-            ? isInWatchLater
-                ? location.pathname !== '/watchlater'
-                    ? toast.info("Already in watch later")
-                    : removeFromWatchLater(dispatch, token, id, toast)
-                : addToWatchLater(dispatch, token, videos, toast)
-            : navigate("/login")
+        ? isInWatchLater
+            ? removeFromWatchLater(dispatch, token, id)
+            : addToWatchLater(dispatch, token, videos)
+        : navigate("/login")
     }
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -60,75 +57,63 @@ export const VideoCard = ({ videos }) => {
         };
     }, [isModalActive]);
 
+
     const videoClickHandler = () => {
         navigate(`/video/${id}`);
         token && !isInHistory && addToHistory(dispatch, token, videos);
     }
-
-    const historyHandler = () => {
-        token && removeFromHistory(dispatch, token, id);
-    }
-
-    const likedHandler = () => {
-        token && removeFromLiked(dispatch, token, id);
-    }
-
-    const addToPlaylist=()=>{
-        if(token){
+    
+    const addToPlaylist = () => {
+        if (token) {
             setPlaylistActive(prev => !prev)
             setModalData(videos)
-        }else{
+        } else {
             navigate("/login")
         }
-        
-    }
-    //code commented for further implementation
 
-    // onMouseEnter={()=>setPlayActive(prev=>!prev)} onMouseLeave={()=>setPlayActive(prev=>!prev)}     
+    }
 
     return (
         <>
-                <div className="video-card top-gutter-md">
-            <div className="img-container" onClick={() => videoClickHandler()}>
-                <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip img-responsive" />
-                {/* {playActive && <MdPlayCircleFilled className="play-button" />} */}
-                <MdPlayCircleFilled className="play-button" />
-                <span className="video-duration">{duration}</span>
-            </div>
-            <div className="video-desc flex-col top-gutter-sm">
-                <h3 className="video-title bottom-gutter-xs">{title}</h3>
-                <span className="created-by">{creator}</span>
-                <div className="video-detail">
-                    <span>{views} Views | 3months ago</span>
-                    <span ref={ref}>
-                        <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>setModalActive(prev => !prev)} />
-                        {isModalActive && (
-                            <div className={`option-container flex-col ${isModalActive && 'active'}`}>
-                                <span onClick={() => watchLaterHandler()}>
-                                    {isInWatchLater
-                                        ? location.pathname !== "/watchlater"
-                                            ? <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>
-                                            : <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
-                                        : <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>}
-                                </span>
-                                <span onClick={()=>addToPlaylist()}><RiPlayListAddFill className="right-gutter-sm"/>Add to playlist</span>
-                                {
-                                    isInHistory && location.pathname === "/history" && <span onClick={() => historyHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from history</span>
+            <div className="video-card top-gutter-md">
+                <div className="img-container" onClick={() => videoClickHandler()}>
+                    <img src={`https://img.youtube.com/vi/${id}/0.jpg`} alt="video" className="clip img-responsive" />
+                    <MdPlayCircleFilled className="play-button" />
+                    <span className="video-duration">{duration}</span>
+                </div>
+                <div className="video-desc flex-col top-gutter-sm">
+                    <h3 className="video-title bottom-gutter-xs">{title}</h3>
+                    <span className="created-by">{creator}</span>
+                    <div className="video-detail">
+                        <span>{views} Views | 3months ago</span>
+                        <span ref={ref}>
+                            <HiDotsVertical size={24} className="watch_playlistoption" onClick={() => setModalActive(prev => !prev)} />
+                            {isModalActive && (
+                                <div className={`option-container flex-col ${isModalActive && 'active'}`}>
+                                    <span onClick={() => watchLaterHandler()}>
+                                        {isInWatchLater
+                                            ? <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
+                                            : <><AiOutlineClockCircle className="right-gutter-sm" />Add to watch Later</>
+                                        }
+                                    </span>
+                                    <span onClick={() => addToPlaylist()}><RiPlayListAddFill className="right-gutter-sm" />Add to playlist</span>
+                                    {
+                                        isInHistory && location.pathname === "/history" && <span onClick={() => token && removeFromHistory(dispatch, token, id)} ><MdOutlineDelete className="right-gutter-sm" />Remove from history</span>
 
-                                }
-                                {
-                                    isInLiked && location.pathname === "/liked" && <span onClick={() => likedHandler()} ><MdOutlineDelete className="right-gutter-sm" />Remove from liked</span>
+                                    }
+                                    {
+                                        isInLiked && location.pathname === "/liked" && <span onClick={() =>  token && removeFromLiked(dispatch, token, id)} ><MdOutlineDelete className="right-gutter-sm" />Remove from liked</span>
 
-                                }
+                                    }
 
-                            </div>
-                        )}
+                                </div>
+                            )}
 
-                    </span>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <Modal isPlaylistActive={isPlaylistActive} setPlaylistActive={setPlaylistActive} modalData={modalData}/>
+            <Modal isPlaylistActive={isPlaylistActive} setPlaylistActive={setPlaylistActive} modalData={modalData} />
         </>
     )
 }

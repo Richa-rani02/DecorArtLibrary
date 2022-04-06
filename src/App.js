@@ -1,12 +1,14 @@
 import "./App.css";
 import {Routes,Route} from "react-router-dom";
 import Mockman from "mockman-js";
-import {Home,Explore,Login,WatchLater,VideoPage,History,Liked,Playlists,Playlistvideo} from "./Pages/index";
+import {Home,Explore,Login,WatchLater,VideoPage,History,Liked,Playlists,Playlistvideo,Error404} from "./Pages/index";
 import {Header} from "./components/index";
+import {ToasterWrapper} from "./Utils/ToastWrapper";
 function App() {
   return (
     <div className="App">
       <Header/>
+      <ToasterWrapper/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/explore" element={<Explore/>}/>
@@ -18,6 +20,7 @@ function App() {
         <Route path="/liked" element={<Liked/>}/>
         <Route path="/playlist" element={<Playlists/>}/>
         <Route path="/playlist/:playlistId" element={<Playlistvideo/>}/>
+        <Route path="/*" element={<Error404/>} />
 
       </Routes>
     </div>

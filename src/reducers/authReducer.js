@@ -13,8 +13,8 @@ export const authReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                token: action.payload1,
-                userDetails: action.payload2
+                token: action.payload.token,
+                userDetails: action.payload.user
 
             }
         case authActions.ERROR:

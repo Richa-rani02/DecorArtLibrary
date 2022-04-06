@@ -1,11 +1,9 @@
 import "./login_Signup.css";
 import {Link,useNavigate} from "react-router-dom";
-import { ToastContainer,toast} from 'react-toastify';
 import { initialFormValues,testLogin } from "./helper";
 import {userLogin} from "../../services/index";
 import {useState} from "react";
 import {useAuth} from "../../context/auth-context";
-import 'react-toastify/dist/ReactToastify.css';
 export const Login=()=>{
     let navigate=useNavigate();
     const [formValues, setFormValues] = useState({ ...initialFormValues });
@@ -23,7 +21,7 @@ export const Login=()=>{
         setFormValues(testLogin);
         userLogin(
             testLogin,
-            authDispatch,toast,navigate
+            authDispatch,navigate
         );
     }
 
@@ -47,7 +45,6 @@ export const Login=()=>{
                     <button type="submit" onClick={loginWithTest} className="btn btn-outline-primary btn-sm btn-rounded-2r top-gutter-sm btn-md">Test Login</button>
                 </form>
              </section>
-             <ToastContainer autoClose={2000}/>
         </div>
 
         

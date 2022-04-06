@@ -47,6 +47,7 @@
 .videoimg_list_wrap{
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
 }
 .video_img_wrap {
     flex-basis: 32rem;
