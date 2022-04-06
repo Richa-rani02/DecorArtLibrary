@@ -59,7 +59,7 @@ export const addVideosToPlaylist = async (dispatch, token, id, video) => {
             }
         });
         if (status === 200 || status === 201) {
-            toast.success("video added to playlist!", {
+            toast.success(`video added to ${data.playlist.title} playlist!`, {
                 id: toastId,
               });
             dispatch({ type: playlistActions.VIDEOS_TO_PLAYLIST, payload: data.playlist })
