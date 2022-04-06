@@ -51,14 +51,6 @@ export const SingleVideo = ({ video }) => {
                                     </>
                             }
                         </div>
-                        <div className="flex-container">
-                            <RiPlayListAddFill size={24} className="right-gutter-sm video-icon" />
-                            <span>Save</span>
-                        </div>
-                        <div className="flex-container">
-                            <AiOutlineClockCircle size={24} className="right-gutter-sm video-icon" />
-                            <span>Watch Later</span>
-                        </div>
                     </div>
                 </div>
                 <hr />
