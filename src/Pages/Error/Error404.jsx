@@ -8,7 +8,7 @@ export const Error404=()=>{
             <div className="error-img">
                 <img src="../Assets/404.png" className="img-responsive" />
             </div> 
-            <button className="btn btn-solid-primary btn-sm btn-rounded-2r btn-color" onClick={() => navigate("/")}>Go to Home</button>
+            <button className="btn btn-solid-primary btn-sm btn-rounded-2r btn-color" onClick={() => navigate("/")}>Explore Now</button>
             
         </div>
         </>

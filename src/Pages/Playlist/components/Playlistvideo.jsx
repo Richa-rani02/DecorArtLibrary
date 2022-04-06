@@ -1,9 +1,11 @@
 import "../Playlist.css";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 import { HorizontalCard, Sidebar } from "../../../components/index";
 import { useStateContext } from "../../../context/state-context";
+import {Empty} from "../../index";
 export const Playlistvideo = () => {
     const { playlistId } = useParams();
+    const location = useLocation();
     const { state: { playlists } } = useStateContext();
     const playlistList = playlists?.find((play) => play._id === playlistId);
     return playlistList && playlistList.videos.length>0? (
@@ -37,7 +39,7 @@ export const Playlistvideo = () => {
             <>
                 <Sidebar />
                 <div className="category-video playlistvideo-container">
-                    No video
+                <Empty path={location.pathname}/>  
                 </div>
             </>
         )
