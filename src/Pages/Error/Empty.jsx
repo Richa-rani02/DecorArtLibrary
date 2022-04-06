@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 export const Empty = ({path}) => {
     let message = "";
     let navigate = useNavigate();
-    console.log(path);
     switch (path) {
         case "/watchlater":
             {
