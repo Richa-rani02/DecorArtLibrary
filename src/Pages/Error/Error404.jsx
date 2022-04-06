@@ -6,7 +6,7 @@ export const Error404=()=>{
         <>
         <div className="error-page flex-col">
             <div className="error-img">
-                <img src="../Assets/404.png" className="img-responsive" />
+                <img src="../Assets/404.png" className="img-responsive" alt="errorstate" />
             </div> 
             <button className="btn btn-solid-primary btn-sm btn-rounded-2r btn-color" onClick={() => navigate("/")}>Explore Now</button>
             

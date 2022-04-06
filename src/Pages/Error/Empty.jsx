@@ -37,7 +37,7 @@ export const Empty = ({path}) => {
     return (
         <div className="empty-page">
             <div className="empty-img">
-                <img src="../Assets/novideoavaiable.png" className="image-resp"/>
+                <img src="../Assets/novideoavaiable.png" className="image-resp" alt="emptystate"/>
             </div>
             <div className="empty-text">
                 <span >{message}</span>
