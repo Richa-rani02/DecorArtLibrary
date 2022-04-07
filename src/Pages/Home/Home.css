@@ -1,3 +1,33 @@
-.home{
-    text-align: center;
+.home-section{
+    display: flex;
+    background-image: linear-gradient(to bottom, rgba(112, 122, 194,0.7) 0%,rgba(179, 179, 179,0.7) 100%), url("../../assets/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    min-height: calc(100vh);
+    min-width:100vw;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content:center;
+    padding: var(--spacing-2) var(--spacing-1);
+
+}
+.home-text{
+    padding: var(--spacing-2) var(--spacing-1);
+}
+.home-text p{
+    font-size: 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+   
+}
+.home-btn-container{
+    display: flex;
+    max-width: fit-content;
+    margin:auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
