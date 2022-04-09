@@ -6,11 +6,12 @@ const GlobalProvider=({children})=>{
 
  const initialState={
      drawerActive:false,
-     optionActive:false,
-     modalActive:false,
+     modalActive:{
+         isActive:false,
+         data:{}
+     },
  }   
  const [globalState,globalDispatch]=useReducer(globalReducer,initialState);
-
 return(
     <GlobalContext.Provider value={{globalState,globalDispatch}}>
         {children}

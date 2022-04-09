@@ -2,6 +2,7 @@ import { globalActions} from "../Utils/actions";
 
 export const globalReducer=(state,action)=>{
     const {type,payload}=action;
+    console.log(payload);
 
     switch(type){
         case globalActions.DRAWER:{
@@ -10,16 +11,13 @@ export const globalReducer=(state,action)=>{
                 drawerActive:!state.drawerActive
             }
         }
-        case globalActions.OPTION_PANEL:{
-            return{
-                ...state,
-                optionActive:!state.optionActive
-            }
-        }
         case globalActions.PLAYLIST_MODAL:{
             return{
                 ...state,
-               modalActive:!state.modalActive
+                modalActive:{
+                    isActive:!state.modalActive.isActive,
+                    data:payload
+                }
             }
         }
     }
