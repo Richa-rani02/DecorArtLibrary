@@ -67,8 +67,6 @@ export const VideoCard = ({ videos }) => {
     const addToPlaylist = () => {
         if (token) {
             globalDispatch({type:globalActions.PLAYLIST_MODAL,payload:videos})
-            // setPlaylistActive(prev => !prev)
-            // setModalData(videos)
         } else {
             navigate("/login")
         }
