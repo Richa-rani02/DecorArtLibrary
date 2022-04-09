@@ -4,7 +4,7 @@ export const dataActions = {
     LOAD_VIDEOS: "LOAD_VIDEOS",
     ERROR: "ERROR",
     SORT_BY: "SORT_BY_CATEGORY",
-    SEARCH:"SEARCH"
+    SEARCH: "SEARCH"
 }
 export const authActions = {
     LOADING: "LOADING",
@@ -21,7 +21,7 @@ export const watchActions = {
 export const historyActions = {
     ADD_TO_HISTORY: "ADD_TO_HISTORY",
     REMOVE_FROM_HISTORY: "REMOVE_FROM_HISTORY",
-    CLEAR_ALL_HISTORY:"CLEAR_ALL_HISTORY",
+    CLEAR_ALL_HISTORY: "CLEAR_ALL_HISTORY",
     ERROR: "ERROR"
 
 }
@@ -33,7 +33,14 @@ export const likedActions = {
 }
 export const playlistActions = {
     PLAYLIST: "PLAYLIST",
-    VIDEOS_TO_PLAYLIST:"VIDEOS_TO_PLAYLIST",
+    VIDEOS_TO_PLAYLIST: "VIDEOS_TO_PLAYLIST",
     ERROR: "ERROR"
+
+}
+
+export const globalActions = {
+    DRAWER: "DRAWER",
+    OPTION_PANEL: "OPTION_PANEL",
+    PLAYLIST_MODAL: "PLAYLIST_MODAL",
 
 }

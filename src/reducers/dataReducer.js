@@ -6,7 +6,6 @@ import { playlistActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
-    // console.log(type,payload);
     switch (type) {
         case dataActions.LOADING:
             return {
