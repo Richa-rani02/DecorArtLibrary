@@ -21,7 +21,7 @@ export const dataReducer = (state, action) => {
                 category: [
                     ...payload.map((cat) => ({
                         ...cat,
-                        isCatActive: false
+                        isCatActive: cat.categoryName==="All"?true : false
                     }))
                 ]
             }
