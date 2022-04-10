@@ -23,12 +23,11 @@ export const VideoCard = ({ videos }) => {
         creator,
         duration,
         views,
+        createdDate
     } = videos;
 
-    const {globalState:{modalActive},globalDispatch}=useGlobal();
+    const {globalDispatch}=useGlobal();
     const [isOptionActive, setOptionActive] = useState(false);
-    const [isPlaylistActive, setPlaylistActive] = useState(false);
-    const [modalData, setModalData] = useState({});
     const ref = useRef();
     const { authState: { token } } = useAuth();
     const { state: { watchLater, history, liked }, dispatch } = useStateContext();
@@ -87,7 +86,7 @@ export const VideoCard = ({ videos }) => {
                     <h3 className="video-title bottom-gutter-xs">{title}</h3>
                     <span className="created-by">{creator}</span>
                     <div className="video-detail">
-                        <span>{views} Views | 3months ago</span>
+                        <span>{views} Views | {createdDate}</span>
                         <span ref={ref}>
                         
                             <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>setOptionActive(prev => !prev) } />
