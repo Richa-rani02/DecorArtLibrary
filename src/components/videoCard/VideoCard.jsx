@@ -88,8 +88,9 @@ export const VideoCard = ({ videos }) => {
                     <div className="video-detail">
                         <span>{views} Views | {createdDate}</span>
                         <span ref={ref}>
-                        
-                            <HiDotsVertical size={24} className="watch_playlistoption" onClick={() =>setOptionActive(prev => !prev) } />
+                            <div className="watch_playlistoption flex-container">
+                            <HiDotsVertical size={24} className="" onClick={() =>setOptionActive(prev => !prev) } />
+                            </div>
                             {isOptionActive && (
                                 <div className={`option-container flex-col ${isOptionActive && 'active'}`}>
                                     <span onClick={() => watchLaterHandler()}>

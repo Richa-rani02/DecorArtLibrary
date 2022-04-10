@@ -1,82 +1,110 @@
-.video-card{
+.video-card {
     width: 18rem;
     height: 18rem;
     cursor: pointer;
     position: relative;
 }
-.img-container{
+
+.img-container {
     width: 100%;
-    height: 10rem;  
+    height: 10rem;
 }
+
+.img-container:hover .play-button {
+    display: block;
+}
+
 .clip:hover {
-     opacity: 0.5; 
+    opacity: 0.5;
 
 }
-.video-desc{
-    padding: var(--spacing-5x) ;
+
+.video-desc {
+    padding: var(--spacing-5x);
     display: flex;
     gap: 4px;
 }
-.video-title{
+
+.video-title {
     font-family: 'Raleway', sans-serif;
     font-size: 1.3rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.created-by{
+
+.created-by {
     font-size: 1rem;
-    color:var(--black-4)
+    color: var(--black-4)
 }
-.video-detail{
+
+.video-detail {
     display: flex;
     justify-content: space-between;
 }
-.video-detail span{
+
+.video-detail span {
     font-size: 1rem;
     font-family: 'Ubuntu', sans-serif;
 }
-.play-button{
+
+.play-button {
     position: absolute;
-    top:30%;
+    top: 30%;
     left: 50%;
     font-size: 2.5rem;
     color: var(--black-1);
-
+    display: none;
 }
-.video-duration{
-    position:absolute;
+
+.video-duration {
+    position: absolute;
     top: 45%;
-    right:var(--spacing-10x);
+    right: var(--spacing-10x);
     background-color: var(--black-7);
     padding: var(--spacing-5x) 7px;
     border-radius: var(--spacing-5x);
     opacity: 0.8;
 }
-.watch_playlistoption{
+
+.watch_playlistoption {
     position: relative;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.5s ease-in;
 }
-.option-container{
-   width: fit-content;
-   height: fit-content;
-   position: absolute;
-   background-color:var(--blue-400);
-   z-index: 2;
-   right: 1rem;
-   padding: var(--spacing-10x);
-   display: none;
+.watch_playlistoption:hover,
+.watch_playlistoption:focus{
+background-color: var(--brand-color);
+opacity:0.9;
+transition: all 0.5s ease-out;
 }
-.option-container span{
-padding: var(--spacing-10x);
+
+.option-container {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    background-color: var(--blue-400);
+    border-radius: var(--spacing-5x);
+    z-index: 2;
+    right: 1rem;
+    padding: var(--spacing-10x);
 }
-.option-container span:hover{
+
+.option-container span {
+    padding: var(--spacing-10x);
+}
+
+.option-container span:hover {
     background-color: var(--blue-350);
 }
-.option-container.active{
-display: flex;
+
+.option-container.active {
+    display: flex;
 }
 
-.popup{
+.popup {
     background-color: var(--blue-400);
 }
-
