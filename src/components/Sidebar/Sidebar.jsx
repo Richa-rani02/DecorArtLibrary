@@ -3,13 +3,14 @@ import {ImHome} from "react-icons/im";
 import {RiPlayListAddFill,RiHistoryLine} from "react-icons/ri";
 import {MdExplore} from "react-icons/md";
 import {AiOutlineClockCircle} from "react-icons/ai";
-import { useStateContext } from "../../context/state-context";
 import { BiLike} from "react-icons/bi";
+import { useGlobal } from "../../context/global-context";
 import "./Sidebar.css";
 export const Sidebar=()=>{
-    const {drawer} = useStateContext();
+    const {globalState:{drawerActive}}=useGlobal();
+
     return(
-        <div className={`navigation_panel ${drawer && 'active'}`}>
+        <div className={`navigation_panel ${drawerActive && 'active'}`}>
         <ul className="nav-lists list-style-none">
             <li>
                 <Link to="/">

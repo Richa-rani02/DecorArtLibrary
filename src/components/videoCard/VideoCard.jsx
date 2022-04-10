@@ -1,4 +1,6 @@
 import "./VideoCard.css";
+// Icons 
+
 import { HiDotsVertical } from "react-icons/hi";
 import { MdPlayCircleFilled, MdOutlineDelete } from "react-icons/md";
 import { RiPlayListAddFill } from "react-icons/ri";
@@ -11,7 +13,8 @@ import { removeFromWatchLater, addToWatchLater, addToHistory, removeFromHistory 
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { removeFromLiked } from "../../services/likedServices";
 import { Modal } from "../modal/Modal";
-import toast from "react-hot-toast";
+import {useGlobal} from "../../context/global-context";
+import { globalActions} from "../../Utils/actions";
 
 export const VideoCard = ({ videos }) => {
     const {
@@ -20,11 +23,11 @@ export const VideoCard = ({ videos }) => {
         creator,
         duration,
         views,
+        createdDate
     } = videos;
 
-    const [isModalActive, setModalActive] = useState(false);
-    const [isPlaylistActive, setPlaylistActive] = useState(false);
-    const [modalData, setModalData] = useState({});
+    const {globalDispatch}=useGlobal();
+    const [isOptionActive, setOptionActive] = useState(false);
     const ref = useRef();
     const { authState: { token } } = useAuth();
     const { state: { watchLater, history, liked }, dispatch } = useStateContext();
@@ -37,7 +40,6 @@ export const VideoCard = ({ videos }) => {
 
 
     const watchLaterHandler = () => {
-        setModalActive(prev => !prev)
         token
         ? isInWatchLater
             ? removeFromWatchLater(dispatch, token, id)
@@ -46,8 +48,8 @@ export const VideoCard = ({ videos }) => {
     }
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            if (isModalActive && ref.current && !ref.current.contains(e.target)) {
-                setModalActive(false);
+            if (isOptionActive && ref.current && !ref.current.contains(e.target)) {
+                setOptionActive(false);
             }
         };
         document.addEventListener("mousedown", checkIfClickedOutside);
@@ -55,7 +57,7 @@ export const VideoCard = ({ videos }) => {
         return () => {
             document.removeEventListener("mousedown", checkIfClickedOutside);
         };
-    }, [isModalActive]);
+    }, [isOptionActive]);
 
 
     const videoClickHandler = () => {
@@ -65,8 +67,7 @@ export const VideoCard = ({ videos }) => {
     
     const addToPlaylist = () => {
         if (token) {
-            setPlaylistActive(prev => !prev)
-            setModalData(videos)
+            globalDispatch({type:globalActions.PLAYLIST_MODAL,payload:videos})
         } else {
             navigate("/login")
         }
@@ -85,11 +86,13 @@ export const VideoCard = ({ videos }) => {
                     <h3 className="video-title bottom-gutter-xs">{title}</h3>
                     <span className="created-by">{creator}</span>
                     <div className="video-detail">
-                        <span>{views} Views | 3months ago</span>
+                        <span>{views} Views | {createdDate}</span>
                         <span ref={ref}>
-                            <HiDotsVertical size={24} className="watch_playlistoption" onClick={() => setModalActive(prev => !prev)} />
-                            {isModalActive && (
-                                <div className={`option-container flex-col ${isModalActive && 'active'}`}>
+                            <div className="watch_playlistoption flex-container">
+                            <HiDotsVertical size={24} className="" onClick={() =>setOptionActive(prev => !prev) } />
+                            </div>
+                            {isOptionActive && (
+                                <div className={`option-container flex-col ${isOptionActive && 'active'}`}>
                                     <span onClick={() => watchLaterHandler()}>
                                         {isInWatchLater
                                             ? <><MdOutlineDelete className="right-gutter-sm" />Remove from  watch Later</>
@@ -113,7 +116,7 @@ export const VideoCard = ({ videos }) => {
                     </div>
                 </div>
             </div>
-            <Modal isPlaylistActive={isPlaylistActive} setPlaylistActive={setPlaylistActive} modalData={modalData} />
+            <Modal/>
         </>
     )
 }

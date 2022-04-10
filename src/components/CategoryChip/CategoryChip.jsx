@@ -4,7 +4,6 @@ import { dataActions } from "../../Utils/actions";
 export const CategoryChip = () => {
 
     const { state: { category }, dispatch } = useStateContext();
-
     const categorySortHandler = (catName) => {
         dispatch({ type: dataActions.SORT_BY, payload: catName });
     }
