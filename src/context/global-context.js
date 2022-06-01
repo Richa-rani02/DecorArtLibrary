@@ -5,7 +5,6 @@ export const GlobalContext=createContext({});
 const GlobalProvider=({children})=>{
 
  const initialState={
-     drawerActive:false,
      modalActive:{
          isActive:false,
          data:{}

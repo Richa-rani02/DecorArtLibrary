@@ -39,7 +39,6 @@ export const playlistActions = {
 }
 
 export const globalActions = {
-    DRAWER: "DRAWER",
     OPTION_PANEL: "OPTION_PANEL",
     PLAYLIST_MODAL: "PLAYLIST_MODAL",
 

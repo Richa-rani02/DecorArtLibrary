@@ -8,9 +8,9 @@ import { useGlobal } from "../../context/global-context";
 import "./Sidebar.css";
 export const Sidebar=()=>{
     const {globalState:{drawerActive}}=useGlobal();
-
+    // <div className={`navigation_panel ${drawerActive && 'active'}`}>
     return(
-        <div className={`navigation_panel ${drawerActive && 'active'}`}>
+        <div className={`navigation_panel`}>
         <ul className="nav-lists list-style-none">
             <li>
                 <Link to="/">

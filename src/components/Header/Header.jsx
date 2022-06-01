@@ -8,15 +8,11 @@ import { useAuth } from "../../context/auth-context";
 import { authActions } from "../../Utils/actions";
 import { dataActions } from "../../Utils/actions";
 import toast from "react-hot-toast";
-import { useGlobal } from "../../context/global-context";
-import { globalActions } from "../../Utils/actions";
 export const Header = () => {
   const { authState: { token }, authDispatch } = useAuth();
 let navigate=useNavigate();
-let location=useLocation();
 
 const {state,dispatch}=useStateContext();
-const {globalDispatch}=useGlobal();
 
 const logOutHandler=()=>{
   const toastId = toast.loading("Logging out...");
@@ -29,11 +25,6 @@ const logOutHandler=()=>{
   return (
     <header>
       <div className="left_area">
-        {location.pathname!=="/" && 
-        <label htmlFor="check">
-          <GiHamburgerMenu className="hamburger-icon" onClick={()=>globalDispatch({type:globalActions.DRAWER})} />
-        </label>
-        }
         <div>
           <h1>Decor Art</h1>
         </div>
