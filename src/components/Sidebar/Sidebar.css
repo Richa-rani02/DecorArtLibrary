@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
 }
-.nav-lists li{
+.nav-lists .nav-links{
     margin: var(--spacing-10x) 0;
     padding: var(--spacing-1);
     width: 100%;
@@ -29,7 +29,7 @@
   font-weight: 400;
   white-space: nowrap;
 }
-.nav-lists li:hover{
+.nav-lists .nav-links:hover{
     background-color: var(--blue-350);
     transition: all 0.5s ease;
 }
