@@ -27,8 +27,42 @@ section {
 
 }
 
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-section select {
+  width: 30%;
+  font-size: 1rem;
+  background-color: var(--blue-400);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-300);
+}
+
+.search-box {
+  margin-left: auto;
+  padding: 10px;
+  width: 27%;
+  font-size: 1rem;
+  background-color: var(--blue-400);
+  border-bottom: 2px solid var(--brand-color);
+  color: white;
+}
+
 @media (max-width:594px) {
   .explore {
     margin-left: 0rem;
+  }
+
+  .search-box {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .filter-section select {
+    width: 100%;
   }
 }

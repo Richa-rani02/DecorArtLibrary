@@ -49,10 +49,10 @@ export const dataReducer = (state, action) => {
                 ...state,
                 watchLater: payload
             }
-        case dataActions.SORT_BY:
+        case dataActions.FILTER_BY_CATEGORY:
             return {
                 ...state,
-                sortby: payload,
+                filterByCategory: payload,
                 category: state.category.map((cat) =>
                     cat.categoryName === payload ? {
                         ...cat,
@@ -63,8 +63,13 @@ export const dataReducer = (state, action) => {
                     }
 
                 )
-
             }
+         case dataActions.SORT_BY:{
+             return {
+                 ...state,
+                 sortby:payload
+             }
+         }   
         case dataActions.SEARCH:
             return {
                 ...state,

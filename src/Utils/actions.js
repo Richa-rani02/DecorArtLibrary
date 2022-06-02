@@ -3,7 +3,8 @@ export const dataActions = {
     LOAD_CATEGORY: "LOAD_CATEGORY",
     LOAD_VIDEOS: "LOAD_VIDEOS",
     ERROR: "ERROR",
-    SORT_BY: "SORT_BY_CATEGORY",
+    FILTER_BY_CATEGORY: "FILTER_BY_CATEGORY",
+    SORT_BY:"SORT_BY_DATE",
     SEARCH: "SEARCH"
 }
 export const authActions = {
