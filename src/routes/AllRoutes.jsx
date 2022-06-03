@@ -2,13 +2,14 @@ import { ProtectedRoutes } from "./ProtectedRoutes";
 import { Routes, Route,Navigate } from "react-router-dom";
 import Mockman from "mockman-js";
 import {useAuth} from "../context/auth-context";
-import { Home, Explore, Login, WatchLater, VideoPage, History, Liked, Playlists, Playlistvideo, Error404 } from "../Pages/index";
+import { Home, Explore, Login, WatchLater, VideoPage, History, Liked, Playlists, Playlistvideo, Error404,Signup } from "../Pages/index";
 export const AllRoutes = () => {
     const {authState:{token}}=useAuth();
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={token?<Navigate to="/explore" replace/>:<Login/>} />
             <Route path="/mock" element={<Mockman />} />
             <Route path="/watchlater" element={
