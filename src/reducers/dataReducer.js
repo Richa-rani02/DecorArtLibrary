@@ -3,6 +3,7 @@ import { watchActions } from "../Utils/actions";
 import { historyActions } from "../Utils/actions";
 import { likedActions } from "../Utils/actions";
 import { playlistActions } from "../Utils/actions";
+import { notesActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
@@ -110,6 +111,24 @@ export const dataReducer = (state, action) => {
                 ...state,
                 playlists: state.playlists.map((list)=>list._id===payload._id?payload:list)
             }
+
+            case notesActions.GET_NOTES:
+                return{
+                    ...state,
+                    notes:payload,
+                }
+
+            case notesActions.ADD_NOTES:
+                return{
+                    ...state,
+                    notes:payload,
+                }
+
+             case notesActions.DELETE_NOTES:
+                 return{
+                     ...state,
+                     notes:payload,
+                 }   
 
 
     }
