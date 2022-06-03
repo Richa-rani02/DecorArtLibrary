@@ -18,6 +18,7 @@ const StateProvider = ({ children }) => {
         history: [],
         liked: [],
         playlists: [],
+        notes:[],
     }
 
     const [state, dispatch] = useReducer(dataReducer, initialState);

@@ -39,6 +39,12 @@ export const playlistActions = {
 
 }
 
+export const notesActions={
+    ADD_NOTES:"ADD_NOTES",
+    DELETE_NOTES:"DELETE_NOTES",
+    GET_NOTES:"GET_NOTES",
+}
+
 export const globalActions = {
     OPTION_PANEL: "OPTION_PANEL",
     PLAYLIST_MODAL: "PLAYLIST_MODAL",
