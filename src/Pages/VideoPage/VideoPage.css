@@ -39,6 +39,22 @@ iframe {
   background-color: var(--blue-400);
   height: calc(75vh - 72px);
   padding: var(--spacing-1);
+  overflow: scroll;
+}
+
+.notes_container::-webkit-scrollbar{
+  display: none;
+}
+.notes_container textarea{
+  background-color: var(--blue-350);
+  color:var(--black-1)
+}
+
+.notes_container button{
+padding: 10px;
+border-radius: 2px;
+background-color: var(--blue-350);
+color:var(--black-1);
 }
 
 hr {
@@ -56,6 +72,15 @@ hr {
 
 .video-icon:hover {
   color: var(--brand-color)
+}
+
+.single_note{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--blue-350);
+  padding: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 980px) {

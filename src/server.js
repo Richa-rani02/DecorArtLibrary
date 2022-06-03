@@ -43,7 +43,7 @@ import {
   getNotesHandler,
   addNotesToVideo,
   removeNotesFromVideo
-} from "./backend/controllers/NoteController";
+} from "./backend/controllers/NotesController";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
