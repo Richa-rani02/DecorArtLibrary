@@ -1,6 +1,7 @@
 import "./VideoPage.css";
 import { useParams } from "react-router-dom";
 import { SingleVideo } from "./SingleVideo";
+import {Sidebar} from "../../components/Sidebar/Sidebar";
 import { useStateContext } from "../../context/state-context";
 
 export const VideoPage = () => {
@@ -9,6 +10,7 @@ export const VideoPage = () => {
     const video=videos?.find((video)=>video._id===videoId);
     return video?(
         <>
+        <Sidebar/>
         <div className="video-page">
             <SingleVideo video={video} />
             <div className="notes_container">

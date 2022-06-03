@@ -1,35 +1,43 @@
 import "./Modal.css";
 import { useState, useEffect } from "react";
 import { MdAdd } from "react-icons/md";
-import { addToPlaylist, addVideosToPlaylist,removeVideosFromPlaylist } from "../../services/index";
+import { addToPlaylist, addVideosToPlaylist, removeVideosFromPlaylist } from "../../services/index";
 import { useStateContext } from "../../context/state-context";
 import { useAuth } from "../../context/auth-context";
 import { isInList } from "../videoCard/helper";
-import {toast} from "react-hot-toast";
-export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
+import { toast } from "react-hot-toast";
+import { useGlobal } from "../../context/global-context";
+import { globalActions } from "../../Utils/actions";
 
+
+export const Modal = () => {
+
+
+    const { globalState: { modalActive: { isActive, data } }, globalDispatch } = useGlobal();
     const [isInputActive, setIsInputActive] = useState(false);
     const [playlistTitle, setPlaylistTitle] = useState("");
-    const { state: { playlists}, dispatch } = useStateContext();
+    const { state: { playlists }, dispatch } = useStateContext();
     const { authState: { token } } = useAuth();
-    const isPlaylistExists=playlists.some((ele)=>ele.title===playlistTitle);
+    const isPlaylistExists = playlists.some((ele) => ele.title === playlistTitle);
 
     const playlistHandler = () => {
         !isPlaylistExists
-        ? playlistTitle && addToPlaylist(dispatch, token, playlistTitle, setIsInputActive)
-        : toast.error("playlist already exists");
-       setPlaylistTitle("");  
+            ? playlistTitle && addToPlaylist(dispatch, token, playlistTitle, setIsInputActive)
+            : toast.error("playlist already exists");
+        setPlaylistTitle("");
     }
+    
     useEffect(() => {
-        isPlaylistActive ? document.body.style.overflow = "hidden" : document.body.style.overflow = 'unset';
-    }, [isPlaylistActive])
+        isActive ? document.body.style.overflow = "hidden" : document.body.style.overflow = 'unset';
+    }, [isActive])
 
     return (
-        <div className={`modal-container ${isPlaylistActive && 'modal-active'} `}>
+        <div className={`modal-container ${isActive && 'modal-active'} `}>
             <div className="popup">
                 <div className="playlist__header">
                     <p className="sub-p">Save to playlist</p>
-                    <i className="fa fa-times" aria-hidden="true" onClick={() => setPlaylistActive(prev => !prev)}></i>
+                    <i className="fa fa-times" aria-hidden="true" onClick={() => globalDispatch({ type: globalActions.PLAYLIST_MODAL, payload: data }
+                    )}></i>
                 </div>
                 {
                     playlists.length > 0 &&
@@ -38,18 +46,18 @@ export const Modal = ({ isPlaylistActive, setPlaylistActive, modalData }) => {
                         <div className="playlist__modal__content top-gutter-sm">
                             <form className="category_filterbox">
                                 {playlists.map((play) => {
-                                    const isInPlaylist =isInList(play.videos,modalData._id);
+                                    const isInPlaylist = isInList(play.videos, data._id);
                                     return (
                                         <label key={play._id} className="filter-block">
                                             <input type="checkbox" value={play.title}
                                                 name={play.title}
                                                 onChange={(e) => {
 
-                                                e.target.checked
-                                                ? addVideosToPlaylist(dispatch, token, play._id, modalData)
-                                                : removeVideosFromPlaylist(dispatch,token,play._id,modalData._id)
+                                                    e.target.checked
+                                                        ? addVideosToPlaylist(dispatch, token, play._id, data)
+                                                        : removeVideosFromPlaylist(dispatch, token, play._id, data._id)
                                                 }
-                                                
+
                                                 }
                                                 checked={isInPlaylist}
                                             />{play.title}

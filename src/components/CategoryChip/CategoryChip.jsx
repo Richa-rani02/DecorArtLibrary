@@ -4,9 +4,8 @@ import { dataActions } from "../../Utils/actions";
 export const CategoryChip = () => {
 
     const { state: { category }, dispatch } = useStateContext();
-
     const categorySortHandler = (catName) => {
-        dispatch({ type: dataActions.SORT_BY, payload: catName });
+        dispatch({ type: dataActions.FILTER_BY_CATEGORY, payload: catName });
     }
     return (
         <div className="category__filters">

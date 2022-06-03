@@ -6,7 +6,6 @@ import { playlistActions } from "../Utils/actions";
 export const dataReducer = (state, action) => {
 
     const { type, payload } = action;
-    // console.log(type,payload);
     switch (type) {
         case dataActions.LOADING:
             return {
@@ -22,7 +21,7 @@ export const dataReducer = (state, action) => {
                 category: [
                     ...payload.map((cat) => ({
                         ...cat,
-                        isCatActive: false
+                        isCatActive: cat.categoryName==="All"?true : false
                     }))
                 ]
             }
@@ -50,10 +49,10 @@ export const dataReducer = (state, action) => {
                 ...state,
                 watchLater: payload
             }
-        case dataActions.SORT_BY:
+        case dataActions.FILTER_BY_CATEGORY:
             return {
                 ...state,
-                sortby: payload,
+                filterByCategory: payload,
                 category: state.category.map((cat) =>
                     cat.categoryName === payload ? {
                         ...cat,
@@ -64,8 +63,13 @@ export const dataReducer = (state, action) => {
                     }
 
                 )
-
             }
+         case dataActions.SORT_BY:{
+             return {
+                 ...state,
+                 sortby:payload
+             }
+         }   
         case dataActions.SEARCH:
             return {
                 ...state,

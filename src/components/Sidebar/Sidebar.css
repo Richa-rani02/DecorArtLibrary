@@ -4,13 +4,15 @@
     background-color: var(--blue-400);
     position: fixed;
     height: 100%;
-    z-index:3
+    z-index:3;
   }
 .nav-lists{
     margin-top: 1rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.nav-lists li{
+.nav-lists .nav-links{
     margin: var(--spacing-10x) 0;
     padding: var(--spacing-1);
     width: 100%;
@@ -27,7 +29,26 @@
   font-weight: 400;
   white-space: nowrap;
 }
-.nav-lists li:hover{
+.nav-lists .nav-links:hover{
     background-color: var(--blue-350);
     transition: all 0.5s ease;
+}
+@media (max-width:594px) {
+    .navigation_panel{
+        width: 100%;
+        height: 4rem;
+        top: auto;
+        bottom: 0;
+        padding:0;
+        display: flex;
+        align-items: center;
+        overflow: scroll;
+    }
+    .nav-lists{
+        flex-direction: row;
+        margin-bottom: 1rem;
+    }
+    .links_name{
+        display: none;
+    }
 }
