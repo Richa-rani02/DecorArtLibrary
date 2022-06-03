@@ -1,14 +1,17 @@
-import "./login_Signup.css";
-import {Link,useNavigate} from "react-router-dom";
-import { initialFormValues,testLogin } from "./helper";
-import {userLogin} from "../../services/index";
-import {useState} from "react";
-import {useAuth} from "../../context/auth-context";
-export const Login=()=>{
-    let navigate=useNavigate();
-    const [formValues, setFormValues] = useState({ ...initialFormValues });
- 
-    const {authDispatch}=useAuth();
+import "./auth.css";
+import { Link, useNavigate } from "react-router-dom";
+import {testLogin } from "./helper";
+import { userLogin } from "../../services/index";
+import { useState } from "react";
+import { useAuth } from "../../context/auth-context";
+export const Login = () => {
+    let navigate = useNavigate();
+    const [formValues, setFormValues] = useState({
+        email: "",
+        password: "",
+    });
+
+    const { authDispatch } = useAuth();
 
 
 
@@ -16,37 +19,48 @@ export const Login=()=>{
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
     }
     const loginWithTest = (e) => {
-       
+
         e.preventDefault();
         setFormValues(testLogin);
         userLogin(
             testLogin,
-            authDispatch,navigate
+            authDispatch, navigate
         );
     }
-
-    const loginHandler = (e) => {
-        e.preventDefault();
-        
-        userLogin(
-                formValues,
-                authDispatch,toast,navigate)
+const {email,password}=formValues;
+    const loginHandler = () => {
+        if (
+            email !== "" &&
+            password !== ""
+          )
+        {userLogin(
+            formValues,
+            authDispatch, navigate)
         }
+    }
 
 
-    return(
-        <div className="login__container">
-         <section className="login">
-         <form action="" className="login-form top-gutter-lg flex-col">
+    return (
+        <div className="auth__container">
+            <section className="auth">
+
+                <form className="auth-form top-gutter-lg flex-col" onSubmit={e => e.preventDefault()}>
                     <h4 className="bottom-gutter-sm">Welcome Back 👋</h4>
-                    <input type="email" name="email" value={formValues.email} placeholder="Enter Email" className="input-box" onChange={handleChange} />
-                    <input type="password" name="password" value={formValues.password} placeholder="Enter Password" className="input-box" onChange={handleChange}  />
-                    <button type="submit" onClick={loginHandler} className="btn btn-solid-primary btn-sm btn-rounded-2r top-gutter-md btn-md btn-color">Login</button>
-                    <button type="submit" onClick={loginWithTest} className="btn btn-outline-primary btn-sm btn-rounded-2r top-gutter-sm btn-md">Test Login</button>
+                    <input type="email" name="email" value={formValues.email} placeholder="Enter Email" className="input-box" onChange={handleChange} required />
+                    <input type="password" name="password" value={formValues.password} placeholder="Enter Password" className="input-box" onChange={handleChange} required />
+                    <span className="new-account top-gutter-sm">
+                    <p>New to DecorArt ?</p>
+                    <Link to="/signup" className="signup-link">Create New Account</Link>
+                    </span>
+                    
+                    <button onClick={loginHandler} className="btn btn-solid-primary btn-sm btn-rounded-2r top-gutter-md btn-md btn-color">Login</button>
+                    <button onClick={loginWithTest} className="btn btn-outline-primary btn-sm btn-rounded-2r top-gutter-sm btn-md">Test Login</button>
                 </form>
-             </section>
+
+
+            </section>
         </div>
 
-        
+
     )
 }

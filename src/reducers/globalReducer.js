@@ -4,12 +4,6 @@ export const globalReducer=(state,action)=>{
     const {type,payload}=action;
 
     switch(type){
-        case globalActions.DRAWER:{
-            return {
-                ...state,
-                drawerActive:!state.drawerActive
-            }
-        }
         case globalActions.PLAYLIST_MODAL:{
             return{
                 ...state,

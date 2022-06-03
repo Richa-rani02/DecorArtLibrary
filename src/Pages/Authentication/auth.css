@@ -1,4 +1,4 @@
-.login__container {
+.auth__container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -6,35 +6,35 @@
     overflow: hidden;
 }
 
-.login {
+.auth {
     display: flex;
     justify-content: center;
 }
 
-.login-form {
+.auth-form {
     width: 30rem;
     padding: var(--spacing-2);
     background-color: var(--blue-400);
     border: 1px solid var(--blue-200);
     display: flex;
     align-items: center;
-
+   
 }
 
-.login-form h4 {
+.auth-form h4 {
     font-size: 2rem;
     font-family: "Ubuntu", sans-serif;
 }
 
-.login-form .input-box {
+.auth-form .input-box {
     width: 100%;
     background-color: var(--bg-color);
-    padding: var(--spacing-1);
+    padding: var(--spacing-0-8);
     margin: var(--spacing-1) 0;
     border-radius: var(--spacing-0-5);
     font-size: 1.1rem;
+    border-bottom: 2px solid var(--brand-color);
     color: var(--black-2);
-
 }
 
 .btn-md {
@@ -46,6 +46,19 @@
     background: linear-gradient(to right, #ff7aa8, #516391);
     color: var(--black-1);
 
+}
+.new-account{
+    display: flex;
+    gap: 1rem;
+  
+}
+.signup-link{
+    color:var(--black-3);
+    padding-bottom: 5px;
+    border-radius: 2px;
+    border-bottom: 1px solid var(--blue-100);
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.1rem;
 }
 
 .btn-outline-primary {
