@@ -44,7 +44,7 @@ import { requiresAuth } from "../utils/authUtils";
 
 /**
  * This handler handles gets all notes in the db.
- * send POST Request at /api/user/notes:videoId
+ * send POST Request at /api/user/notes
  * */
 
   export const addNotesToVideo = function (schema, request) {
@@ -82,7 +82,7 @@ import { requiresAuth } from "../utils/authUtils";
 
 /**
  * This handler handles gets all notes in the db.
- * send POST Request at /api/user/notes/:noteId
+ * send delete Request at /api/user/notes/:noteId
  * */
 
   export const removeNotesFromVideo = function (schema, request) {
