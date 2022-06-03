@@ -1,6 +1,6 @@
 import axios from "axios";
 import {notesActions} from "../Utils/actions";
-import {toast} from react-hot-toast;
+import toast from "react-hot-toast";
 
 export const AddNotesServices=async(videoId,content,token,dispatch)=>{
 const toastId=toast.loading("saving notes..");
@@ -35,7 +35,7 @@ export const deleteNotesService = async (noteId, token, dispatch) => {
         toast.success("note deleted successfully.", {
           id: toastId,
         });
-        dispatch({ type: DELETE_NOTE, payload: data.notes });
+        dispatch({ type:notesActions.DELETE_NOTES, payload: data.notes });
       }
     } catch (error) {
       toast.error("Some error occured. Try Again.", {
