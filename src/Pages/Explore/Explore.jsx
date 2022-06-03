@@ -28,7 +28,7 @@ const Explore = () => {
                     </section>
                     {isLoading ? (
                         <div className="loader">
-                            <ThreeDots color="#f86da0" height={80} width={80} />
+                            <ThreeDots color="#f86da0" height={100} width={100} />
                         </div>
                     ) : sortByDates.length > 0 ?
                         <section className="category-video-explore">
