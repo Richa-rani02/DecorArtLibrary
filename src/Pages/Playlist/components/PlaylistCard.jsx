@@ -24,7 +24,7 @@ export const PlaylistCard = ({ playlistfolder }) => {
                 </div>
                 {videos.length>0 && 
                 <div className="trans-drawer flex-container"onClick={() => navigate(`/playlist/${_id}`)}  >
-                   <span className="small-text">{videos.length >= 1 && `${videos.length}+ `}<span className="video-text">video</span></span>
+                   <span className="small-text">{videos.length}<span className="video-text"> {videos.length>1?'videos':'video'}</span></span>
                 </div>
 }
             </>

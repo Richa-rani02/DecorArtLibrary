@@ -21,7 +21,7 @@ const logOutHandler=()=>{
     <header>
       <div className="left_area">
         <div>
-          <h1>Decor Art</h1>
+          <h1 onClick={()=>navigate("/explore")}>Decor Art</h1>
         </div>
       </div>
       <div className="right_area">

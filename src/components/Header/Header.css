@@ -30,6 +30,7 @@ header{
     color: var(--brand-color);
     letter-spacing: 5px;
     line-height: 2rem;
+    cursor: pointer;
   }
   .search-form{
     width: 45%;
